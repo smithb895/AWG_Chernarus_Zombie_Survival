@@ -1,0 +1,30 @@
+;Elegant face and custom texture script by Celery
+
+_zombie=_this select 0
+?!isServer:goto "client"
+?isNil "_zombie":exit
+
+~0.1
+_face=""
+_faces=[]
+?typeOf _zombie in CLY_zombieclasses_a:_faces=_faces+CLY_faces_a
+?typeOf _zombie in CLY_zombieclasses_b:_faces=_faces+CLY_faces_b
+?typeOf _zombie in CLY_zombieclasses_c:_faces=_faces+CLY_faces_c
+?typeOf _zombie in CLY_zombieclasses_d:_faces=_faces+CLY_faces_d
+?count _faces==0:_faces=CLY_faces
+_face=_faces select floor random count _faces
+
+_texture=""
+_model=getText (configFile/"CfgVehicles"/(typeOf _zombie)/"model")
+?_model in CLY_z_alttexturemodels:_textures=CLY_z_alttextures select (CLY_z_alttexturemodels find _model);_texture=_textures select floor random count _textures
+
+_zombie setFace _face
+_zombie setVariable ["face",_face,true]
+?_texture!="":_zombie setObjectTexture [0,_texture]
+?_texture!="":_zombie setVariable ["texture",_texture,true]
+exit
+
+#client
+~3
+{if (!isNil {_x getVariable "face"}) then {if (typeName (_x getVariable "face")=="STRING") then {_x setFace (_x getVariable "face");_x setVariable ["face",nil]}};if (!isNil {_x getVariable "texture"}) then {if (typeName (_x getVariable "texture")=="STRING") then {_x setObjectTexture [0,_x getVariable "texture"];_x setVariable ["texture",nil]}}} forEach allUnits
+goto "client"

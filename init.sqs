@@ -1,0 +1,204 @@
+?isNil "CLY_hordetrigger":CLY_hordetrigger=""
+?isNil "CLY_playerstates":CLY_playerstates=[]
+?isNil "CLY_deadcharacters":CLY_deadcharacters=[]
+
+;Determine game version (important for excluding non-supported commands and classes)
+CLY_game=""
+?isClass (configFile/"CfgPatches"/"Chernarus"):CLY_game="A2"
+?isClass (configFile/"CfgPatches"/"CA_E"):CLY_game="OA"
+?isClass (configFile/"CfgPatches"/"Chernarus") and isClass (configFile/"CfgPatches"/"CA_E"):CLY_game="CO"
+
+@isDedicated or !isNull player
+
+;Fade sound
+[] spawn {0 fadeSound 0;sleep 2.5;5 fadeSound 1}
+
+;Make markers invisible
+?isServer:{_x setMarkerAlpha 0} forEach ["respawn_base"]
+
+;Character specific equipment
+removeAllItems player
+_addweapon=[player,"ItemRadio","ItemCompass","ItemWatch"]
+?typeOf player=="GUE_Commander":_addweapon=_addweapon+[["MP5A5",3]]
+?typeOf player=="FR_Cooper":_addweapon=_addweapon+[["M16A2",4],"ItemMap"]
+?typeOf player=="FR_GL":_addweapon=_addweapon+[["M1014",4],["HandGrenade_West",2]]
+?typeOf player=="FR_Sapper":_addweapon=_addweapon+[["M1014",4],["PipeBomb",1]]
+?typeOf player=="USMC_Soldier":_addweapon=_addweapon+[["M9",4],["M40A3",2]]
+?typeOf player=="USMC_Soldier_Medic":_addweapon=_addweapon+[["MP5A5",3]]
+?typeOf player=="Citizen3":_addweapon=_addweapon+[["M9",7]]
+?typeOf player=="Policeman":_addweapon=_addweapon+[["M9",2]]
+?typeOf player=="Assistant":_addweapon=_addweapon+[["Colt1911",4]]
+?typeOf player=="RU_Commander":_addweapon=_addweapon+[["Makarov",6],["PipeBomb",1]]
+?typeOf player=="Pilot":_addweapon=_addweapon+["ItemMap"]
+?typeOf player=="RU_Soldier_Pilot":_addweapon=_addweapon+["NVGoggles"]
+?typeOf player=="FR_Light":_addweapon=_addweapon+[["M4A1",2],["M9",2],["HandGrenade_West",1]]
+?typeOf player=="FR_AC":_addweapon=_addweapon+[["M16A4_GL",3,0,3,3],["M9",2],["HandGrenade_West",1],"ItemMap"]
+?typeOf player=="USMC_Soldier_Pilot":_addweapon=_addweapon+[["MP5A5",3]]
+?typeOf player=="USMC_Soldier_AR":_addweapon=_addweapon+[["M249",1]]
+?typeOf player=="USMC_Soldier_SL":_addweapon=_addweapon+[["M16A2GL",3,0,2,4],"ItemMap"]
+?typeOf player=="USMC_Soldier_TL":_addweapon=_addweapon+[["M4A1",3],"ItemMap"]
+?typeOf player=="USMC_SoldierS_SniperH":_addweapon=_addweapon+[["M107",2],["M9",3]]
+?typeOf player=="USMC_SoldierS_Spotter":_addweapon=_addweapon+[["M16A2",3],"ItemMap"]
+?typeOf player=="FR_Assault_R":_addweapon=_addweapon+[["M4A1_AIM_SD_camo",9],["M9",8],["HandGrenade_West",3],"Binocular","NVGoggles","ItemGPS","ItemMap"]
+?{typeOf player in _x} count CLY_playerstates==0:_addweapon execVM "cly_addweapon.sqf"
+[] spawn {sleep 0.1;if ((typeOf player!="FR_Assault_R") and (typeOf player!="Pilot") and (typeOf player!="FR_Cooper") and (typeOf player!="FR_AC") and (typeOf player!="USMC_Soldier_TL") and (typeOf player!="USMC_Soldier_SL") and (typeOf player!="USMC_SoldierS_Spotter")) then {player removeWeapon "ItemMap"};if (typeOf player!="FR_Assault_R") then {player removeWeapon "ItemGPS"}}
+
+
+
+;Briefing
+player createDiaryRecord ["Diary",["Story","<img image='zp5_cly_present.paa' width='170' height='85'/><br/>Chernarus Apocalypse, part one<br/><br/>Most of Chernarus has been overrun by zombies. Shortly after the outbreak began, the world was alerted with an emergency transmission and a quarantine was attempted by the CDF, Russia, NATO and hired professionals. The quarantine failed after 22 hours and all surviving units retreated to protect the capital region except for the Russians who have a long border with Chernarus to the north.<br/><br/>You are one of the few survivors left in South Zagoria, the ground zero of the outbreak, and have been waiting for a passing ship or other form of help on the eastern shore in vain. Just a moment ago, you picked up a plea for help over the radio requesting assistance at the <marker name='obj1'>Olsha hill radio tower</marker>. You must go northwest and investigate."]]
+
+;Character specific diaries
+?typeOf player=="GUE_Commander":player createDiaryRecord ["Diary",["Mercenary's diary","<br/>I knew from the start that this would happen. I've seen enough zombie flicks to know how well quarantines work with them. The boss might meet with an accident if I don't get the wage of a lifetime for this.<br/><br/>The movies have a point about headshots, but Romero was wrong about whether the fuckers can run or not."]]
+?typeOf player=="FR_Cooper":player createDiaryRecord ["Diary",["Marine's diary","<br/>Hell, it's like Left 4 Dead out there, except these real zombies need more bullets to go down. The only thing sure to kill them is a hole in the dome but I don't need to worry about that for now, thanks to Mr. Benelli here. Oorah!"]]
+?typeOf player=="Citizen3":player createDiaryRecord ["Diary",["Writer's diary","<br/>Am I really the only sane guy left in Chernarus? I came here a few weeks ago to do field studies about the second (or third, depends on how you count them) civil war of modern Chernarus for my book, and when a zombie outbreak was announced, people were pouring in here from everywhere. I was going to leave at the first sign of zombies but the police arrested me for speeding on the way to the airport.<br/><br/>We're lucky to have fog tonight. Zombies may be scary in the dark and bad weather, but they're absolutely terrifying enemies in clear daylight.<br/><br/>I've saved lots of ammo for my pistol but I feel a bit guilty that I've done it by letting others do the fighting. I'll try to man up from now on."]]
+?typeOf player=="Assistant":player createDiaryRecord ["Diary",["Doctor's diary","<br/>The way these zombies (for lack of a better term) appear to be decaying but still demonstrate great physical strength and stamina and most alarmingly, senses that humans lack in their normal form, is simply fascinating. Of course, my and everyone else's situation is bleak as a direct cause of the outbreak but still I would do anything to get one of those walking dead under my scalpel.<br/><br/>I'm pretty sure that others will expect me to carry and hand out medical supplies, so I stocked up on them just in case."]]
+?typeOf player=="TK_Aziz_EP1":player createDiaryRecord ["Diary",["Colonel's diary","<br/>This is like straight from one of those decadent movies they watch in the West. I was only supposed to observe the show and report back to high command but it seems that we overestimated the CDF and its subsidiaries. How I wish I were home with my wives... Kalila especially makes hummus like no other.<br/><br/>On the subject of the undead devils, the bomb I took from the camp before it was overrun might prove useful in a pinch because I don't think that my Makarov pistol was designed to deal with already dead people."]]
+?typeOf player=="Haris_Press_EP1":player createDiaryRecord ["Diary",["Reporter's diary","<br/>Oh. My. God.<br/><br/>If I knew how badly the military would do its job, I would never have requested this assignment. It's their own mess afterall, I just know it: None of the army people were willing to comment on the origin of the zombies, and according to a soldier I interviewed, his company was on heightened alert even before the emergency broadcast.<br/><br/>In any case, I seem to be the only person around here smart enough to have a GPS map, or any kind of map for that matter. I was surprised to find that Chernarus has- *had* an active geocaching community, and I marked the nearest cache down on my map.<br/><br/>So far my no-gun policy has paid off rather well: I've stayed alive only because the zombies don't seem to recognize weaponless people as non-dead until they're very close."]]
+
+;Zombie facts
+player createDiaryRecord ["Diary",["Zombie facts","<br/>- Zombies will pursue you if they've noticed you<br/>- You can take two hits from a zombie without dying<br/>- Head and leg shots are the best ways to deal with them<br/>- Torso kills are easier with a powerful weapon<br/>- Unarmed survivors are much less likely to attract attention<br/>- Gunshots attract zombies<br/>- Zombies may have bandages on their person (action will pop up)"]]
+
+;JIP info
+player createDiaryRecord ["Diary",["Join in progress","<br/>This mission supports joining in progress. New players teleport to a constantly updating position near a random teammate. Each character's loadout is saved, and a player will get the character's saved damage, bandages and gear with 2/3 of the magazines if that character has been used before."]]
+
+;Credits
+player createDiaryRecord ["Diary",["Credits","<br/>Mission and scripts:<br/>Celery<br/><br/>Apocalypse series concept:<br/>Zipper5 and Celery<br/><br/>Voice acting:<br/>Rejenorst (www.rejenorst.com)<br/><br/>Music:<br/>Thief: Deadly Shadows soundtrack composed by Eric Brosius<br/><br/>Noises and screams:<br/>Thief: The Dark Project and freesound.org<br/><br/>Fog script:<br/>Rockhount (original by Yac)"]]
+
+;[] exec "cly_objectives.sqs"
+
+
+
+
+
+;;;;;;;;;;Serverside only;;;;;;;;;;
+?!isServer:exit
+
+;No conversations
+{_x setVariable ["BIS_noCoreConversations",true,true]} forEach allUnits
+
+;Create HQs for all sides in case the mission doesn't do it
+_hqwest=createCenter west
+_hqeast=createCenter east
+_hqres=createCenter resistance
+_hqciv=createCenter civilian
+
+;Make everyone friendly. Important both for survivor cooperation and proper zombie behavior.
+{_x setFriend [west,1]} forEach [west,east,resistance,civilian]
+{_x setFriend [east,1]} forEach [west,east,resistance,civilian]
+{_x setFriend [resistance,1]} forEach [west,east,resistance,civilian]
+{_x setFriend [civilian,1]} forEach [west,east,resistance,civilian]
+
+;Zombie aggro radius (random between min and max)
+CLY_minaggroradius=20
+CLY_maxaggroradius=140
+
+;At what range from a player zombies can spawn and despawn
+;Minimum's function is mostly protecting players at start
+CLY_minspawndist=120
+CLY_maxspawndist=500
+CLY_despawndist=CLY_maxspawndist+50
+
+;Distance from victim at which a non-horde zombie gives up the chase
+CLY_chasegiveupdist=400
+
+;Zombie will pick a random victim within this radius from the nearest target
+;Value of 1 or below is multiplier of aggro radius, 0 disables randomization
+CLY_randomvictimradius=0.333
+
+;Motorized vehicle aggro radius multiplier
+CLY_vehicleaggromultiplier=3
+
+;Unarmed aggro radius multiplier
+CLY_unarmedaggromultiplier=0.2
+
+;Default zombies per km^2
+CLY_defaultdensity=100
+
+;Minimum and maximum interval between spawning random hordes
+CLY_randomhordemininterval=360
+CLY_randomhordemaxinterval=480
+
+;Minimum and maximum random horde spawning distance from player group
+CLY_randomhordeminspawndist=600
+CLY_randomhordemaxspawndist=1000
+
+;Minimum and maximum number of zombies in a random horde
+CLY_randomhordeminamount=4
+CLY_randomhordemaxamount=8
+
+;Groups reserved for hordes - allows hordes to spawn in very crowded areas
+CLY_hordereservedgroups=80
+
+;Zombie types and their % of automatically generated zombies (must total 100)
+;normal		makes noise when idle, runs to victim when one is spotted
+;surprise		runs to victim when one is spotted, silent until close
+;passive		runs to victim when one is spotted, silent until close, waits still
+;crawler		crawls, silent until very close, aggro radius always maximum
+;passive crawler	crawls, silent until very close, waits still
+;sneaker		crawls, silent until very close, starts running when close, aggro radius always maximum
+;ambusher		crawls, silent until very close, waits still, starts running when victim is in aggro range
+;armored		runs to victim when one is spotted, silent until close, withstands lots of damage
+;slow armored	walks to victim when one is spotted, silent until close, withstands lots of damage
+CLY_zombietypes=[["normal",62],["surprise",30],["passive",0],["crawler",6],["passive crawler",0],["sneaker",2],["ambusher",0],["armored",0],["slow armored",2]]
+
+;Chance of zombie spawning with a lootable bandage
+CLY_zombiebandagechance=0.06
+
+;Chance of zombie dropping a random magazine
+CLY_zombiemagazinechance=0.1
+
+;Magazines that a zombie can drop
+CLY_zombiemagazines=["30Rnd_9x19_MP5","8Rnd_B_Beneli_74Slug","15Rnd_9x19_M9","7Rnd_45ACP_1911","8Rnd_9x18_Makarov","FlareWhite_M203","30Rnd_545x39_AK","5x_22_LR_17_HMR","8Rnd_B_Saiga12_74Slug","64Rnd_9x19_Bizon","30Rnd_556x45_Stanag","100Rnd_762x54_PK","HandGrenade"]
+
+;Debug mode - show markers for prepared positions and active zombies
+CLY_debug=false
+
+;Disable ACE stamina
+ACE_NoStaminaEffects=true
+publicVariable "ACE_NoStaminaEffects"
+
+;Sound arrays
+CLY_noises_idle=["idle1","idle2","idle3","idle4","idle5","idle6","idle7","idle8"]
+CLY_noises_chase=["chase1","chase2","chase3","chase4","chase5","chase6","chase7","chase8"]
+CLY_noises_attack=["attack1","attack2","attack3","attack4"]
+CLY_noises_die=["die1","die2"]
+CLY_noises_scream=["scream1","scream2","scream3"]
+
+;Unit classes that can be used as zombies - civilian units are not recommended due to AI problems
+;Make subarrays for a group of similar units to make the whole group have the same chance to appear as a single unit
+CLY_zombieclasses=["Ins_Villager3","Ins_Woodlander3","Ins_Woodlander2","Ins_Worker2","Ins_Villager4","Ins_Woodlander1","Ins_Lopotev",["Ins_Soldier_1","Ins_Soldier_Crew","Ins_Soldier_CO","Ins_Bardak"],["CDF_Soldier","CDF_Soldier_Militia","CDF_Soldier_Crew","CDF_Soldier_Light"],["USMC_Soldier","USMC_SoldierM_Marksman","USMC_Soldier_Officer","USMC_Soldier_TL","USMC_Soldier_Crew","USMC_Soldier_Light","FR_TL","FR_Marksman","FR_GL","FR_Sapper","FR_Light"],["RU_Soldier","RU_Soldier_Officer","RU_Soldier_Crew","RU_Soldier_Light","RUS_Soldier3","RUS_Commander"]]
+
+;Armored zombie classes
+CLY_armoredzombieclasses=["MVD_Soldier"]
+
+;What classes can have which faces (a = Asian, b = African, c = European, d = Arab/Persian)
+;Classes not in any array can have any face
+CLY_zombieclasses_a=[]
+CLY_zombieclasses_b=["Soldier_PMC","Soldier_MG_PMC","Soldier_Engineer_PMC","Ins_Soldier_Pilot","USMC_Soldier","USMC_SoldierM_Marksman","USMC_Soldier_Officer","USMC_Soldier_TL","USMC_Soldier_Crew","USMC_Soldier_Light","FR_TL","FR_Marksman","FR_GL","FR_Sapper","FR_Light","BAF_Soldier_W","BAF_Soldier_L_W"]
+CLY_zombieclasses_c=["Ins_Villager3","Ins_Woodlander3","Ins_Woodlander2","Ins_Worker2","Ins_Villager4","Ins_Woodlander1","Ins_Lopotev","Soldier_PMC","Soldier_MG_PMC","Soldier_Engineer_PMC","Ins_Soldier_Pilot","Ins_Soldier_1","Ins_Soldier_Crew","Ins_Soldier_CO","Ins_Bardak","GUE_Soldier_1","GUE_Soldier_2","GUE_Soldier_3","CDF_Soldier","CDF_Soldier_Militia","CDF_Soldier_TL","CDF_Soldier_Crew","CDF_Soldier_Light","CDF_Soldier_Pilot","USMC_Soldier","USMC_SoldierM_Marksman","USMC_Soldier_Officer","USMC_Soldier_TL","USMC_Soldier_Crew","USMC_Soldier_Light","FR_TL","FR_Marksman","FR_GL","FR_Sapper","FR_Light","BAF_Soldier_W","BAF_Soldier_Officer_W","BAF_crewman_W","BAF_Soldier_AR_W","BAF_Soldier_TL_W","BAF_Soldier_L_W","RU_Soldier","RU_Soldier_Officer","RU_Soldier_Crew","RU_Soldier_Light","RUS_Soldier3","RUS_Commander","MVD_Soldier"]
+CLY_zombieclasses_d=[]
+
+;Zombie faces
+CLY_faces=[]
+CLY_faces_a=["Face58_camo1"]
+CLY_faces_b=[]
+CLY_faces_c=[]
+CLY_faces_d=[]
+for "_x" from 1 to 107 do {_0=if (_x<10) then {"0"} else {""};_face=format ["Face%1%2_camo1",_0,_x];CLY_faces=CLY_faces+[_face]}
+for "_x" from 1 to 21 do {_0=if (_x<10) then {"0"} else {""};_face=format ["Face%1%2_camo1_EP1",_0,_x];CLY_faces=CLY_faces+[_face];CLY_faces_d=CLY_faces_d+[_face]}
+for "_x" from 108 to 124 do {_face=format ["Face%1_camo1_PMC",_x];CLY_faces=CLY_faces+[_face];CLY_faces_a=CLY_faces_a+[_face]}
+for "_x" from 26 to 40 do {_face=format ["Face%1_camo1",_x];CLY_faces_b=CLY_faces_b+[_face]}
+for "_x" from 78 to 86 do {_face=format ["Face%1_camo1",_x];if (_face!="Face85_camo1") then {CLY_faces_b=CLY_faces_b+[_face]}}
+for "_x" from 1 to 107 do {_0=if (_x<10) then {"0"} else {""};_face=format ["Face%1%2_camo1",_0,_x];if (_face!="Face58_camo1" and !(_face in CLY_faces_b)) then {CLY_faces_c=CLY_faces_c+[_face]}}
+
+;Alternate textures
+CLY_z_alttexturemodels=["\ca\characters2\civil\Worker\Worker","\ca\characters2\civil\Woodlander\Woodlander","\ca\characters2\civil\Villager\Villager"]
+CLY_z_alttextures=[["\ca\characters2\civil\worker\data\worker_co.paa","\ca\characters2\civil\worker\data\Worker_v2_CO.paa","\ca\characters2\civil\worker\data\Worker_v3_CO.paa","\ca\characters2\civil\worker\data\Worker_v4_CO.paa"],["\ca\characters2\civil\woodlander\data\woodlander_co.paa","\ca\characters2\civil\woodlander\data\woodlander_v2_co.paa","\ca\characters2\civil\woodlander\data\woodlander_v3_co.paa","\ca\characters2\civil\woodlander\data\woodlander_v4_co.paa"],["\ca\characters2\civil\villager\data\villager_co.paa","\ca\characters2\civil\villager\data\villager_v2_co.paa","\ca\characters2\civil\villager\data\villager_v3_co.paa","\ca\characters2\civil\villager\data\villager_v4_co.paa"]]
+
+[] exec "zombie_scripts\cly_z_unitupdate.sqs"
+[] exec "zombie_scripts\cly_z_randomhorde.sqs"
+[] execVM "cly_playerstates.sqf"
+[] exec "jipresumepos.sqs"
+
+exit

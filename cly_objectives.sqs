@@ -1,0 +1,124 @@
+;Ingeniously simple and easy to figure objective script by Celery
+
+?isNil "obj1":obj1=taskNull
+?isNil "obj2":obj2=taskNull
+?isNil "obj3":obj3=taskNull
+?isNil "obj4":obj4=taskNull
+?isNil "obj5":obj5=taskNull
+
+?isNil "obj1activated":obj1activated=true
+?isNil "obj2activated":obj2activated=false
+?isNil "obj3activated":obj3activated=false
+?isNil "obj4activated":obj4activated=false
+?isNil "obj5activated":obj5activated=false
+
+?isNil "obj1done":obj1done=false
+?isNil "obj2done":obj2done=false
+?isNil "obj3done":obj3done=false
+?isNil "obj4done":obj4done=false
+?isNil "obj5done":obj5done=false
+
+?isNil "klenreached":klenreached=false
+
+_obj1activated=false
+_obj2activated=false
+_obj3activated=false
+_obj4activated=false
+_obj5activated=false
+
+_obj1done=false
+_obj2done=false
+_obj3done=false
+_obj4done=false
+_obj5done=false
+
+_jiptime=time+5
+
+#loop
+?!_obj1activated and obj1activated:_obj1activated=true;goto "obj1activated"
+?!_obj1done and obj1done:_obj1done=true;goto "obj1done"
+?!_obj2activated and obj2activated:_obj2activated=true;goto "obj2activated"
+?!_obj2done and obj2done:_obj2done=true;goto "obj2done"
+?!_obj3activated and obj3activated:_obj3activated=true;goto "obj3activated"
+?!_obj3done and obj3done:_obj3done=true;goto "obj3done"
+?!_obj4activated and obj4activated:_obj4activated=true;goto "obj4activated"
+?!_obj4done and obj4done:_obj4done=true;goto "obj4done"
+?!_obj5activated and obj5activated:_obj5activated=true;goto "obj5activated"
+?!_obj5done and obj5done:_obj5done=true;goto "obj5done"
+~0.5
+goto "loop"
+
+
+#obj1activated
+obj1=player createSimpleTask [""]
+obj1 setSimpleTaskDescription ["<br/>Go northwest to the <marker name='obj1'>Olsha hill radio tower</marker> and see if you can help whomever called you on the radio.","Investigate Olsha hill",""]
+player setCurrentTask obj1
+?!obj1done:taskHint ["New objective:\nInvestigate Olsha hill\n(northwest)",[1,1,0,1],"taskNew"]
+goto "loop"
+
+#obj1done
+obj1 setTaskState "Succeeded"
+?time>_jiptime:taskHint ["Objective completed:\nInvestigate Olsha hill",[0,1,0,1],"taskDone"]
+goto "loop"
+
+
+#obj2activated
+obj2=player createSimpleTask [""]
+obj2 setSimpleTaskDescription ["<br/>The policeman in the tower had a map with a marker over the <marker name='obj2'>control tower</marker> of Krasnostav airfield to the west of Olsha hill. Go check it out.","Check out the control tower",""]
+obj2 setTaskState "Created"
+player setCurrentTask obj2
+"obj2" setMarkerTypeLocal "hd_destroy"
+"ammomarker1" setMarkerTypeLocal "hd_pickup"
+?time>_jiptime or !obj2done:taskHint ["New objective:\nCheck out the control tower\n(west)",[1,1,0,1],"taskNew"]
+goto "loop"
+
+#obj2done
+obj2 setTaskState "Succeeded"
+?time>_jiptime and obj2activated:taskHint ["Objective completed:\nCheck out the control tower",[0,1,0,1],"taskDone"]
+goto "loop"
+
+
+#obj3activated
+obj3=player createSimpleTask [""]
+obj3 setSimpleTaskDescription ["<br/>Nikita's people will give you shelter in exchange for retrieving some <marker name='obj3'>photos</marker> they left behind in Krasnostav, west-southwest of the airfield. Get the photos in the large brick house.","Retrieve Krasnostav photos",""]
+obj3 setTaskState "Created"
+"obj3" setMarkerTypeLocal "hd_objective"
+player setCurrentTask obj3
+
+obj4=player createSimpleTask [""]
+obj4 setSimpleTaskDescription ["<br/>After retrieving the photos you are to meet with Nikita's soldiers at the top of <marker name='obj4'>Klen</marker>, south-southeast of Krasnostav.","Go to Klen",""]
+obj4 setTaskState "Created"
+"obj4" setMarkerTypeLocal "hd_join"
+
+?time>_jiptime or !obj3done:taskHint ["New objective:\nRetrieve Krasnostav photos\n(west-southwest)",[1,1,0,1],"taskNew"]
+goto "loop"
+
+#obj3done
+obj3 setTaskState "Succeeded"
+?!obj4activated:obj4activated=true;publicVariable "obj4activated"
+?time>_jiptime:taskHint ["Objective completed:\nRetrieve Krasnostav photos",[0,1,0,1],"taskDone"]
+goto "loop"
+
+
+#obj4activated
+player setCurrentTask obj4
+?time>_jiptime or !obj4done:taskHint ["New objective:\nGo to the top of Klen\n(south-southeast)",[1,1,0,1],"taskNew"]
+goto "loop"
+
+#obj4done
+obj4 setTaskState "Succeeded"
+?time>_jiptime:taskHint ["Objective completed:\nGo to Klen",[0,1,0,1],"taskDone"]
+
+
+#obj5activated
+obj5=player createSimpleTask [""]
+if (CLY_hordetrigger=="horde2") then {obj5 setSimpleTaskDescription ["<br/>Zombies are attacking <marker name='obj4'>Klen</marker>. Defend the hill!","Defend the hill",""]} else {obj5 setSimpleTaskDescription ["<br/>You were told to meet the soldiers at <marker name='obj4'>Klen</marker>.","Wait for rendezvous",""]}
+obj5 setTaskState "Created"
+player setCurrentTask obj5
+?time>_jiptime or !obj5done:if (CLY_hordetrigger=="horde2") then {taskHint ["New objective:\nDefend the hill",[1,1,0,1],"taskNew"]} else {taskHint ["New objective:\nWait for the soldiers",[1,1,0,1],"taskNew"]}
+goto "loop"
+
+#obj5done
+obj5 setTaskState "Succeeded"
+?time>_jiptime:if (CLY_hordetrigger=="horde2") then {taskHint ["Objective completed:\nDefend the hill",[0,1,0,1],"taskDone"]} else {taskHint ["Objective completed:\nWait for the soldiers",[0,1,0,1],"taskDone"]}
+goto "loop"

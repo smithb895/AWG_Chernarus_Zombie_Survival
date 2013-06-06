@@ -1,0 +1,97 @@
+CLY_cutscene=true
+cutText ["","BLACK OUT",5]
+5 fadeSound 0
+CLY_jukeboxkill=5
+player setVariable ["victim",objNull,true]
+~5
+cutText ["","BLACK FADED",10]
+~1
+removeAllWeapons player
+~1
+
+_photos=false
+?{"EvPhoto" in items _x} count CLY_players>0:_photos=true
+?!_photos:obj3 setTaskState "Failed"
+
+;Create camera without cinematic borders
+_camera="Camera" camCreate [0,0,0]
+_camera cameraEffect ["INTERNAL","BACK"]
+showCinemaBorder false
+camUseNVG false
+_camera camCommand "inertia on"
+
+;comment "18:59:40";
+_camera camPrepareTarget [96755.23,62980.70,2326.58]
+_camera camPreparePos [11576.64,10636.59,0.36]
+_camera camPrepareFOV 0.700
+_camera camCommitPrepared 0
+
+~1
+_outropositions=[outropos_1,outropos_2,outropos_3,outropos_4,outropos_5,outropos_6]
+?!(!isNil {player getVariable "dead"} or typeOf player in CLY_deadcharacters):player setPos getPos (_outropositions select (CLY_players find player));player setDir 0
+
+clearRadio
+cutText ["","BLACK IN",3]
+3 fadeSound 1
+0 fadeMusic 1
+playMusic "Track03_First_to_Fight"
+~6
+
+;comment "19:06:24";
+_camera camPrepareTarget [108919.85,4949.01,-21980.32]
+_camera camPreparePos [11571.53,10669.82,1.82]
+_camera camPrepareFOV 0.461
+_camera camCommitPrepared 0
+
+_text="\n\n\n\n\nThe soldiers took us to their camp."
+?count CLY_players==1:_text="\n\n\n\n\nThe soldiers took me to their camp."
+?!isNil {player getVariable "dead"} or typeOf player in CLY_deadcharacters:_text="\n\n\n\n\nThe soldiers took the surviving members to their camp."
+?(!isNil {player getVariable "dead"} or typeOf player in CLY_deadcharacters) and count CLY_players==1:_text=format ["\n\n\n\n\nThe soldiers took %1 to their camp.",name (CLY_players select 0)]
+titleText [format ["%1",_text],"PLAIN",0.5]
+
+~5
+
+;comment "19:14:43";
+_camera camPrepareTarget [88064.25,70037.81,-24786.40]
+_camera camPreparePos [11564.09,10666.48,2.45]
+_camera camPrepareFOV 0.800
+_camera camCommitPrepared 5
+
+~1
+
+_text="\n\n\n\n\nThey did it even though they didn't get the photos in the end. Nikita was disappointed but agreed that it's still better to have extra firepower at the camp."
+?_photos:_text="\n\n\n\n\nNikita was pleased to have the photos and he was glad to offer shelter in exchange. What he wanted with the photos was anybody's guess; there was no time to look at them in Krasnostav."
+titleText [format ["%1",_text],"PLAIN",1]
+
+~11
+
+;comment "19:24:43";
+_camera camPrepareTarget [-69927.94,54303.49,37897.86]
+_camera camPreparePos [11569.87,10672.78,0.89]
+_camera camPrepareFOV 0.801
+_camera camCommitPrepared 0
+
+titleText ["\n\n\n\n\nHe and his lieutenants are planning an expedition to Berezino sometime soon, probably seeking means to escape Chernarus.","PLAIN",0.7]
+
+~8
+
+titleText ["\n\n\n\n\nWhat becomes of that plan remains to be seen...","PLAIN",0.6]
+
+~4
+
+cutText ["","BLACK OUT",3]
+3 fadeSound 0
+~3
+cutText ["","BLACK FADED",100]
+
+titleRsc ["outro","PLAIN"]
+
+~8
+5 fadeMusic 0
+~6
+
+;Reinstate player rating
+player addRating -rating player
+player addRating CLY_playerrating
+
+endMission "END1"

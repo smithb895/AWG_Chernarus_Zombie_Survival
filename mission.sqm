@@ -1,0 +1,8726 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"cacharacters2",
+		"chernarus",
+		"camisc3",
+		"caweapons_ammoboxes",
+		"CAWheeled_Pickup",
+		"CAWheeled",
+		"caweapons",
+		"ca_animals2_cow",
+		"CASounds",
+		"CAMisc",
+		"ca_modules_functions",
+		"CAAir",
+		"CATracked",
+		"ca_highcommand",
+		"ca_air2_su25",
+		"caair2_uh1y",
+		"cawater2_smallboat_1",
+		"ca_modules_animals",
+		"ca_modules_clouds",
+		"ca_missions_firstaidsystem",
+		"ca_missions_alternativeinjurysimulation",
+		"ca_missions_battlefieldclearance",
+		"cawheeled2_m1114_armored",
+		"CABuildings",
+		"warfarebuildings",
+		"CAWheeled2_V3S",
+		"CAWheeled2_VWGolf",
+		"CAWater",
+		"CAWheeled_Offroad",
+		"CAWheeled2_MTVR",
+		"CAWheeled3_M1030",
+		"CA_AH64D",
+		"CAAir2_C130J"
+	};
+	addOnsAuto[]=
+	{
+		"cacharacters2",
+		"ca_modules_functions",
+		"ca_modules_animals",
+		"ca_modules_clouds",
+		"ca_missions_firstaidsystem",
+		"ca_missions_alternativeinjurysimulation",
+		"ca_missions_battlefieldclearance",
+		"camisc3",
+		"caweapons_ammoboxes",
+		"CAWheeled_Pickup",
+		"CAWheeled",
+		"ca_animals2_cow",
+		"CASounds",
+		"CAMisc",
+		"CAAir",
+		"ca_air2_su25",
+		"caair2_uh1y",
+		"cawater2_smallboat_1",
+		"cawheeled2_m1114_armored",
+		"warfarebuildings",
+		"CATracked",
+		"CABuildings",
+		"CAWheeled2_V3S",
+		"CAWheeled2_VWGolf",
+		"CAWater",
+		"CAWheeled_Offroad",
+		"CAWheeled2_MTVR",
+		"caweapons",
+		"CAWheeled3_M1030",
+		"CA_AH64D",
+		"CAAir2_C130J",
+		"chernarus"
+	};
+	randomSeed=3852420;
+	class Intel
+	{
+		briefingName="[AWG] Chernarus Zombie Survival";
+		briefingDescription="Survive in a zombie-infested Chernarus.";
+		resistanceWest=0;
+		startFog=0.15000001;
+		forecastFog=0.15000001;
+		year=2012;
+		month=10;
+		day=31;
+		hour=17;
+		minute=45;
+	};
+	class Groups
+	{
+		items=136;
+		class Item0
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7947.9893,392.76559,8354.625};
+					special="NONE";
+					id=32;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=1;
+					text="generatorminxy";
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14977.771,201.65106,15324.975};
+					special="NONE";
+					id=33;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=1;
+					text="generatormaxxy";
+				};
+			};
+		};
+		class Item2
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12935.535,239.12265,12763.078};
+					azimut=180;
+					id=34;
+					side="CIV";
+					vehicle="Policeman";
+					leader=1;
+					skill=0.60000002;
+					text="towerman";
+					init="this setVariable [""CLY_removedead"",false];this disableAI ""MOVE"";this setPos [getPos this select 0,getPos this select 1,9];removeAllItems this;0=[this,[""Makarov"",1],""ItemRadio"",""ItemMap""] execVM ""cly_addweapon.sqf"";this setVariable [""victim"",objNull]";
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12927.716,209.45351,12760.625};
+					id=35;
+					side="WEST";
+					vehicle="CDF_Soldier_Pilot";
+					leader=1;
+					skill=0.60000002;
+					text="pilotzombie";
+					init="[this,""passive"",objNull,false,5] exec ""zombie_scripts\cly_z_init.sqs"";this lookAt [getPos this select 0,(getPos this select 1)+5,0]";
+				};
+			};
+		};
+		class Item4
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11239.339,189.33,12210.545};
+					azimut=100;
+					special="NONE";
+					id=38;
+					side="CIV";
+					vehicle="Rocker1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setPosATL [getPos this select 0,getPos this select 1,0.5];0=[this,[""PK"",1],""ItemMap""] execVM ""cly_addweapon.sqf""";
+				};
+			};
+		};
+		class Item5
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11243.615,189.31863,12234.204};
+					special="NONE";
+					id=39;
+					side="CIV";
+					vehicle="Citizen1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item6
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11370.166,181.76051,12220.89};
+					special="NONE";
+					id=40;
+					side="CIV";
+					vehicle="Profiteer3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item7
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11420.947,174.85612,12219.449};
+					special="NONE";
+					id=41;
+					side="CIV";
+					vehicle="Citizen4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item8
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11306.916,188.96834,12231.669};
+					special="NONE";
+					id=42;
+					side="CIV";
+					vehicle="Rocker4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item9
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11288.961,188.98195,12224.676};
+					special="NONE";
+					id=43;
+					side="CIV";
+					vehicle="SchoolTeacher";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item10
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11230.599,191.72122,12250.478};
+					special="NONE";
+					id=44;
+					side="CIV";
+					vehicle="Worker2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item11
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11202.478,198.0556,12256.812};
+					special="NONE";
+					id=45;
+					side="CIV";
+					vehicle="Worker1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item12
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11171.055,203.19682,12279.242};
+					special="NONE";
+					id=46;
+					side="CIV";
+					vehicle="Citizen4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item13
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11148.874,207.12593,12297.583};
+					special="NONE";
+					id=47;
+					side="CIV";
+					vehicle="Rocker2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item14
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11149.495,205.87227,12285.346};
+					special="NONE";
+					id=48;
+					side="CIV";
+					vehicle="Profiteer1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item15
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11134.312,208.85425,12301.312};
+					special="NONE";
+					id=49;
+					side="CIV";
+					vehicle="Villager3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item16
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11243.621,189.33,12200.284};
+					special="NONE";
+					id=50;
+					side="CIV";
+					vehicle="Woodlander1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item17
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11241.054,189.33,12200.502};
+					special="NONE";
+					id=51;
+					side="CIV";
+					vehicle="Woodlander2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item18
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11241.604,189.33,12195.966};
+					special="NONE";
+					id=52;
+					side="CIV";
+					vehicle="Citizen2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item19
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11240.621,189.33,12189.255};
+					special="NONE";
+					id=53;
+					side="CIV";
+					vehicle="Worker3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item20
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11237.186,189.33,12195.848};
+					special="NONE";
+					id=54;
+					side="CIV";
+					vehicle="Villager1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item21
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11244.889,189.33,12196.921};
+					special="NONE";
+					id=55;
+					side="CIV";
+					vehicle="Villager4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item22
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11266.054,189.33,12216.664};
+					special="NONE";
+					id=56;
+					side="CIV";
+					vehicle="Citizen3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item23
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11270.121,189.33,12215.804};
+					special="NONE";
+					id=57;
+					side="CIV";
+					vehicle="Profiteer2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item24
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11267.886,189.33,12213.412};
+					special="NONE";
+					id=58;
+					side="CIV";
+					vehicle="Woodlander4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item25
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11265.456,189.33,12206.77};
+					special="NONE";
+					id=59;
+					side="CIV";
+					vehicle="Woodlander3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item26
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11257.811,189.33,12197.251};
+					special="NONE";
+					id=60;
+					side="CIV";
+					vehicle="Worker4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item27
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11260.171,189.33,12195.44};
+					special="NONE";
+					id=61;
+					side="CIV";
+					vehicle="Villager2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item28
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11111.538,210.8385,12301.354};
+					special="NONE";
+					id=62;
+					side="CIV";
+					vehicle="Profiteer4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item29
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11187.613,203.1498,12286.009};
+					special="NONE";
+					id=63;
+					side="CIV";
+					vehicle="Priest";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item30
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11080.091,213.38065,12336.438};
+					special="NONE";
+					id=64;
+					side="CIV";
+					vehicle="Pilot";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item31
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11064.486,213.79367,12313.007};
+					special="NONE";
+					id=65;
+					side="CIV";
+					vehicle="Rocker3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item32
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11593.134,173.11765,12465.806};
+					id=67;
+					side="WEST";
+					vehicle="USMC_Soldier_Pilot";
+					leader=1;
+					skill=0.60000002;
+					init="this setPos [getPos this select 0,getPos this select 1,0];[this,""passive"",objNull,false,4] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item33
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11594.146,168.75,12517.515};
+					special="NONE";
+					id=68;
+					side="CIV";
+					vehicle="Rocker4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item34
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11589.527,168.80447,12491.448};
+					special="NONE";
+					id=69;
+					side="CIV";
+					vehicle="Citizen4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item35
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11573.193,168.80124,12479.19};
+					special="NONE";
+					id=70;
+					side="CIV";
+					vehicle="Profiteer3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item36
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11574.925,168.86676,12449.369};
+					special="NONE";
+					id=71;
+					side="CIV";
+					vehicle="Woodlander4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item37
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11566.079,168.85399,12447.006};
+					special="NONE";
+					id=72;
+					side="CIV";
+					vehicle="Worker2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item38
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11588.809,168.87679,12469.136};
+					special="NONE";
+					id=73;
+					side="CIV";
+					vehicle="Worker1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item39
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11551.659,168.89606,12421.292};
+					special="NONE";
+					id=74;
+					side="CIV";
+					vehicle="Villager3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item40
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11537.628,169.17693,12401.599};
+					special="NONE";
+					id=75;
+					side="CIV";
+					vehicle="Profiteer4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item41
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11573.253,168.99159,12406.186};
+					special="NONE";
+					id=76;
+					side="CIV";
+					vehicle="Profiteer1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item42
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11504.343,172.38776,12402.411};
+					special="NONE";
+					id=77;
+					side="CIV";
+					vehicle="Rocker3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item43
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={13379.688,67,12104.791};
+					id=78;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item44
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11896.898,158.46582,12611.224};
+					id=79;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,15+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item45
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11886.595,157.47604,12591.913};
+					id=80;
+					side="GUER";
+					vehicle="GUE_Soldier_1";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,15+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item46
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11870.279,153.88698,12513.404};
+					id=81;
+					side="GUER";
+					vehicle="GUE_Soldier_1";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,20+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item47
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11829.307,155.96498,12514.796};
+					id=82;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,20+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item48
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11605.371,170.60228,12581.568};
+					id=83;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,13+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item49
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11423.521,178.28822,12318.781};
+					id=84;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,25+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item50
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11922.104,158.89999,12664.119};
+					id=85;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,15+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item51
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11911.881,158.97688,12646.733};
+					id=86;
+					side="GUER";
+					vehicle="GUE_Soldier_1";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,15+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item52
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11898.729,158.91663,12623.746};
+					id=87;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,15+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item53
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11928.666,149.14728,12467.772};
+					id=88;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,30+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item54
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11914.48,149.19833,12474.87};
+					id=89;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,25+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item55
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11672.722,168.34387,12617.451};
+					id=90;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,20+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item56
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={12817.396,208.23607,12749.956};
+					id=91;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""passive"",objNull,false,22+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item57
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={12817.315,206.80724,12724.801};
+					id=92;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""passive"",objNull,false,20+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item58
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={12788.023,204.33569,12706.761};
+					id=93;
+					side="GUER";
+					vehicle="GUE_Soldier_1";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""passive"",objNull,false,20+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item59
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={12649.186,170.73398,12596.787};
+					id=94;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""passive"",objNull,false,35+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item60
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11610.823,174.62767,12625.743};
+					id=95;
+					side="GUER";
+					vehicle="GUE_Soldier_1";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""passive"",objNull,false,30+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item61
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13046.789,127.6311,12465.354};
+					azimut=245;
+					id=113;
+					side="CIV";
+					vehicle="Secretary1";
+					leader=1;
+					skill=0.60000002;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this moveInCargo carwreck;this action [""lightOn"",carwreck]";
+				};
+			};
+		};
+		class Item62
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13047.728,127.5483,12460.336};
+					azimut=205;
+					id=114;
+					side="CIV";
+					vehicle="ValentinaVictim";
+					leader=1;
+					skill=0.60000002;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this";
+				};
+			};
+		};
+		class Item63
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11601.332,168.78291,12508.101};
+					special="NONE";
+					id=117;
+					side="CIV";
+					vehicle="Damsel1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item64
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11066.973,213.37901,12309.618};
+					special="NONE";
+					id=118;
+					side="CIV";
+					vehicle="Damsel3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item65
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11302.357,188.99982,12238.837};
+					special="NONE";
+					id=119;
+					side="CIV";
+					vehicle="Damsel4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item66
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11272.816,189.31607,12204.164};
+					special="NONE";
+					id=120;
+					side="CIV";
+					vehicle="Damsel2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item67
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11242.911,189.28705,12238.942};
+					special="NONE";
+					id=121;
+					side="CIV";
+					vehicle="Damsel5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item68
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11086.677,213.12747,12337.372};
+					special="NONE";
+					id=122;
+					side="CIV";
+					vehicle="Farmwife1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item69
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11578.372,168.76282,12502.255};
+					special="NONE";
+					id=123;
+					side="CIV";
+					vehicle="Farmwife2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item70
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11577.499,168.99667,12395.563};
+					special="NONE";
+					id=124;
+					side="CIV";
+					vehicle="Farmwife3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item71
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11303.679,189.0249,12276.18};
+					special="NONE";
+					id=125;
+					side="CIV";
+					vehicle="Farmwife4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item72
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11582.753,168.85376,12464.753};
+					special="NONE";
+					id=126;
+					side="CIV";
+					vehicle="Farmwife5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item73
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11574.527,169.05284,12377.71};
+					special="NONE";
+					id=127;
+					side="CIV";
+					vehicle="HouseWife1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item74
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11555.289,168.99255,12391.916};
+					special="NONE";
+					id=128;
+					side="CIV";
+					vehicle="HouseWife2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item75
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11102.736,210.44228,12285.461};
+					special="NONE";
+					id=129;
+					side="CIV";
+					vehicle="HouseWife3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item76
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11578.589,168.85179,12442.57};
+					special="NONE";
+					id=130;
+					side="CIV";
+					vehicle="HouseWife4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item77
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11264.173,189.33,12201.302};
+					special="NONE";
+					id=131;
+					side="CIV";
+					vehicle="HouseWife5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item78
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11560.256,168.86584,12438.115};
+					special="NONE";
+					id=132;
+					side="CIV";
+					vehicle="Madam1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item79
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11278.959,189.03365,12215.58};
+					special="NONE";
+					id=133;
+					side="CIV";
+					vehicle="Madam2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item80
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11171.636,208.98097,12366.773};
+					special="NONE";
+					id=134;
+					side="CIV";
+					vehicle="Madam3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item81
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11563.215,168.95972,12408.071};
+					special="NONE";
+					id=135;
+					side="CIV";
+					vehicle="Madam4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item82
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11526.442,169.53172,12386.757};
+					special="NONE";
+					id=136;
+					side="CIV";
+					vehicle="Madam5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item83
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11242.584,189.33,12198.209};
+					special="NONE";
+					id=137;
+					side="CIV";
+					vehicle="Secretary1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item84
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11230.895,189.23695,12214.956};
+					special="NONE";
+					id=138;
+					side="CIV";
+					vehicle="Secretary2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item85
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11221.092,189.44157,12201.395};
+					special="NONE";
+					id=139;
+					side="CIV";
+					vehicle="Secretary3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item86
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11584.705,168.99373,12419.967};
+					special="NONE";
+					id=140;
+					side="CIV";
+					vehicle="Secretary4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item87
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11244.344,189.33,12192.608};
+					special="NONE";
+					id=141;
+					side="CIV";
+					vehicle="Secretary5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item88
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11535.674,168.9985,12387.863};
+					special="NONE";
+					id=142;
+					side="CIV";
+					vehicle="Sportswoman1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item89
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11037.313,220.41809,12359.894};
+					special="NONE";
+					id=143;
+					side="CIV";
+					vehicle="Sportswoman2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item90
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11153.435,209.1917,12339.692};
+					special="NONE";
+					id=144;
+					side="CIV";
+					vehicle="Sportswoman3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item91
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11263.306,189.10941,12180.559};
+					special="NONE";
+					id=145;
+					side="CIV";
+					vehicle="Sportswoman4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item92
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11243.017,189.33,12221.849};
+					special="NONE";
+					id=146;
+					side="CIV";
+					vehicle="Sportswoman5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item93
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11249.5,189.52467,12163.574};
+					special="NONE";
+					id=147;
+					side="CIV";
+					vehicle="WorkWoman1";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item94
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11259.051,189.33,12229.371};
+					special="NONE";
+					id=148;
+					side="CIV";
+					vehicle="WorkWoman2";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item95
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11625.006,169.02232,12489.428};
+					special="NONE";
+					id=149;
+					side="CIV";
+					vehicle="WorkWoman3";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item96
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11402.955,177.74588,12215.104};
+					special="NONE";
+					id=150;
+					side="CIV";
+					vehicle="WorkWoman4";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item97
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.25;
+					position[]={11451.437,171.19887,12227.737};
+					special="NONE";
+					id=151;
+					side="CIV";
+					vehicle="WorkWoman5";
+					leader=1;
+					skill=0.2;
+					health=0;
+					init="this setVariable [""CLY_removedead"",false];removeAllWeapons this;removeAllItems this;this setDir random 360";
+				};
+			};
+		};
+		class Item98
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11484.814,317.30789,11328.06};
+					id=153;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					init="this action [""LightOn"",car];deleteVehicle this";
+				};
+			};
+		};
+		class Item99
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11596.75,173.09523,12396.821};
+					azimut=290;
+					id=164;
+					side="GUER";
+					vehicle="GUE_Soldier_2";
+					leader=1;
+					skill=0.60000002;
+					init="this setPosATL [getPos this select 0,getPos this select 1,2];[this,""passive"",objNull,false,10+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item100
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11592.73,168.99266,12418.002};
+					id=165;
+					side="GUER";
+					vehicle="GUE_Soldier_1";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,20] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item101
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11560.506,168.99599,12395.642};
+					id=166;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,20] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item102
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={11491.619,173.57465,12412.231};
+					azimut=155;
+					id=168;
+					side="GUER";
+					vehicle="GUE_Soldier_3";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,20+random 5] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item103
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={13294.259,67.000092,11945.294};
+					id=169;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,10+random 2] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item104
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.5;
+					position[]={13293.931,67.000038,11924.541};
+					id=170;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,10+random 2] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item105
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15511.679,0.15273143,11965.157};
+					id=171;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					init="{if (!isMultiplayer and !isPlayer _x) then {deleteVehicle _x}} forEach [themercenary,themarine,thewriter,thedoctor,thegeneral,thepilot,cop,russianpilot,teacher,hippie,thegrenadier,therifleman,themedic,demospec,therifleman_1,thegrenadier_1]";
+				};
+			};
+		};
+		class Item106
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15659.105,0.31140792,11963.805};
+					special="NONE";
+					id=172;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=1;
+					text="zombiespawner";
+					description="All zombies spawn here to prevent unimmersive firing by unzombified units";
+				};
+			};
+		};
+		class Item107
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15499.938,0.34348744,12307.294};
+					id=178;
+					side="LOGIC";
+					vehicle="FunctionsManager";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item108
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15893.861,0.027273253,12319.859};
+					special="NONE";
+					id=196;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=1;
+					text="server";
+				};
+			};
+		};
+		class Item109
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=10;
+				class Item0
+				{
+					position[]={13858.974,4.316267,11711.731};
+					azimut=185;
+					special="NONE";
+					id=174;
+					side="WEST";
+					vehicle="FR_Cooper";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="themarine";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Cooper - M16A2 (4 mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={13856.526,4.5790663,11711.113};
+					azimut=110;
+					special="NONE";
+					id=203;
+					side="WEST";
+					vehicle="FR_GL";
+					player="PLAYER COMMANDER";
+					skill=0.2;
+					text="thegrenadier_1";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Commando - Shotgun (4 Mags) Hand Grenade(2)";
+					synchronizations[]={220,219,221};
+				};
+				class Item2
+				{
+					position[]={13855.304,4.7527475,11707.926};
+					azimut=75;
+					special="NONE";
+					id=177;
+					side="CIV";
+					vehicle="Pilot";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="thepilot";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Pilot - Unarmed, map (GPS, geocache coords)";
+					synchronizations[]={219,220,221};
+				};
+				class Item3
+				{
+					position[]={13855.706,4.7921143,11703.827};
+					azimut=27.2491;
+					special="NONE";
+					id=176;
+					side="CIV";
+					vehicle="Assistant";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="thedoctor";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Doctor - M1911A1 (4 mags), extra bandages";
+					synchronizations[]={219,220,221};
+				};
+				class Item4
+				{
+					position[]={13857.171,4.6816258,11702.004};
+					special="NONE";
+					id=175;
+					side="CIV";
+					vehicle="Citizen3";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="thewriter";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Writer - M9 (7 mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item5
+				{
+					position[]={13860.475,4.3588438,11701.776};
+					special="NONE";
+					id=202;
+					side="WEST";
+					vehicle="USMC_Soldier";
+					player="PLAY CDG";
+					skill=0.2;
+					text="therifleman_1";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Rifleman - M40A3 (2 Mags) M9 (4 Mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item6
+				{
+					position[]={13863.771,4.0379372,11701.997};
+					azimut=350;
+					special="NONE";
+					id=183;
+					side="WEST";
+					vehicle="USMC_Soldier_Medic";
+					player="PLAY CDG";
+					skill=0.58311468;
+					text="themedic";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Medic - MP5A5 (3 Mags)";
+					synchronizations[]={220,219,221};
+				};
+				class Item7
+				{
+					position[]={13864.634,3.8931594,11704.725};
+					azimut=290;
+					special="NONE";
+					id=195;
+					side="WEST";
+					vehicle="USMC_Soldier";
+					player="PLAY CDG";
+					skill=0.2;
+					text="therifleman";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Rifleman - M40A3 (2 Mags) M9 (4 Mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item8
+				{
+					position[]={13864.55,3.8067846,11709.01};
+					azimut=265;
+					special="NONE";
+					id=194;
+					side="WEST";
+					vehicle="FR_GL";
+					player="PLAY CDG";
+					skill=0.2;
+					text="thegrenadier";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="The Commando - Shotgun (4 Mags) Hand Grenade(2)";
+					synchronizations[]={221,220,219};
+				};
+				class Item9
+				{
+					position[]={13862.976,3.9168591,11711.544};
+					azimut=185;
+					special="NONE";
+					id=191;
+					side="WEST";
+					vehicle="FR_Sapper";
+					player="PLAY CDG";
+					skill=0.2;
+					text="demospec";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Demo Specialist - Shotgun(4 Mags) Satchel Charge";
+					synchronizations[]={220,221,219};
+				};
+			};
+		};
+		class Item110
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15475.657,0.24913067,12308.795};
+					id=217;
+					side="LOGIC";
+					vehicle="BIS_animals_Logic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item111
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15487.961,-0.0017075241,12308.396};
+					id=218;
+					side="LOGIC";
+					vehicle="BIS_clouds_Logic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item112
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13843.745,5.5977798,11729.939};
+					id=219;
+					side="LOGIC";
+					vehicle="FirstAidSystem";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					synchronizations[]={183,195,194,191,174,203,177,176,175,202,179,180,201,186,187,185,189,188,181,184,225,226,227,228,232,231,233,234,254,255,256,257,258,265,266,267,269};
+				};
+			};
+		};
+		class Item113
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13874.894,3.9344196,11733.837};
+					id=221;
+					side="LOGIC";
+					vehicle="AlternativeInjurySimulation";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					synchronizations[]={183,195,194,191,174,203,177,176,175,202,179,180,201,186,187,185,189,188,181,184,225,226,228,232,231,233,234,254,255,256,257,258,265,266,267,269};
+				};
+			};
+		};
+		class Item114
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13861.271,3.8499904,11732.371};
+					id=220;
+					side="LOGIC";
+					vehicle="BattleFieldClearance";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					synchronizations[]={183,195,194,191,174,203,177,176,175,202,179,180,201,186,187,185,189,188,181,184,225,226,228,232,231,233,234,254,255,256,257,258,265,266,267,269};
+				};
+			};
+		};
+		class Item115
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={12796.587,6.0127869,9667.5098};
+					id=225;
+					side="WEST";
+					vehicle="FR_AC";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Force Recon Patrol Leader - M16A4GL (3 mags) Flares (3)";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={12795.684,6.0127869,9667.1924};
+					azimut=299.159;
+					id=226;
+					side="WEST";
+					vehicle="FR_Light";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Force Recon Patrolman - M4A1 (2 mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item2
+				{
+					position[]={12797.807,6.0127869,9664.3369};
+					azimut=128.89799;
+					id=227;
+					side="WEST";
+					vehicle="FR_Light";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Force Recon Patrolman - M4A1 (2 mags)";
+					synchronizations[]={219};
+				};
+				class Item3
+				{
+					position[]={12796.675,6.0127869,9663.959};
+					azimut=184.27699;
+					id=228;
+					side="WEST";
+					vehicle="FR_Light";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Force Recon Patrolman - M4A1 (2 mags)";
+					synchronizations[]={219,220,221};
+				};
+			};
+		};
+		class Item116
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={13021.146,66.16684,13473.274};
+					azimut=143.02699;
+					special="NONE";
+					id=234;
+					side="WEST";
+					vehicle="USMC_Soldier_SL";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.2;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Squad Leader - M16A2GL (3 mags) Flares (2)";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={13018.582,66.291649,13472.352};
+					azimut=184.045;
+					special="NONE";
+					id=233;
+					side="WEST";
+					vehicle="USMC_Soldier_AR";
+					player="PLAY CDG";
+					skill=0.2;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Automatic Rifleman - M249 (1 mag)";
+					synchronizations[]={219,220,221};
+				};
+				class Item2
+				{
+					position[]={13022.936,65.364105,13480.144};
+					azimut=13.7722;
+					special="NONE";
+					id=231;
+					side="WEST";
+					vehicle="USMC_Soldier_Pilot";
+					player="PLAY CDG";
+					skill=0.2;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Pilot - MP5A5 (3 mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item3
+				{
+					position[]={13024.341,66.059471,13474.035};
+					azimut=116.122;
+					special="NONE";
+					id=232;
+					side="WEST";
+					vehicle="USMC_Soldier_Pilot";
+					player="PLAY CDG";
+					skill=0.2;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Pilot - MP5A5 (3 mags)";
+					synchronizations[]={219,220,221};
+				};
+			};
+		};
+		class Item117
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11475.604,317.27249,11322.809};
+					azimut=203.58501;
+					special="NONE";
+					id=237;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="Klen";
+				};
+			};
+		};
+		class Item118
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=6;
+				class Item0
+				{
+					position[]={10579.95,128.97722,9692.9199};
+					azimut=288.47299;
+					special="NONE";
+					id=265;
+					side="WEST";
+					vehicle="USMC_Soldier_SL";
+					player="PLAY CDG";
+					leader=1;
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Squad Leader - M16A2GL (3 mags) Map";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={10580.619,128.72762,9694.1504};
+					azimut=288.47299;
+					special="NONE";
+					id=180;
+					side="CIV";
+					vehicle="SchoolTeacher";
+					player="PLAY CDG";
+					skill=1;
+					text="teacher";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A teacher - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+				class Item2
+				{
+					position[]={10580.701,129.06104,9691.4131};
+					azimut=288.47299;
+					special="NONE";
+					id=201;
+					side="CIV";
+					vehicle="Pilot";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="thepilot_1";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Pilot - Unarmed, Map";
+					synchronizations[]={219,220,221};
+				};
+				class Item3
+				{
+					position[]={10582.503,128.66389,9692.5137};
+					azimut=288.47299;
+					special="NONE";
+					id=186;
+					side="CIV";
+					vehicle="Citizen2";
+					player="PLAY CDG";
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Citizen (Blue Suit) - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+				class Item4
+				{
+					position[]={10583.68,128.29282,9693.9473};
+					azimut=288.47299;
+					special="NONE";
+					id=187;
+					side="CIV";
+					vehicle="Citizen4";
+					player="PLAY CDG";
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Citizen (Green Suit) - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+				class Item5
+				{
+					position[]={10583.607,128.8418,9689.6426};
+					azimut=288.47299;
+					special="NONE";
+					id=185;
+					side="CIV";
+					vehicle="Functionary2";
+					player="PLAY CDG";
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Functionary (Brown Suit) - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+			};
+		};
+		class Item119
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=6;
+				class Item0
+				{
+					position[]={11135.42,200.50635,11976.858};
+					azimut=394.76001;
+					special="NONE";
+					id=266;
+					side="WEST";
+					vehicle="USMC_Soldier_TL";
+					player="PLAY CDG";
+					leader=1;
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="USMC Team Leader - M4A1 (3 mags) Map";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={11133.869,200.64041,11977.604};
+					azimut=394.76001;
+					special="NONE";
+					id=179;
+					side="CIV";
+					vehicle="Policeman";
+					player="PLAY CDG";
+					skill=1;
+					text="cop";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Policeman - M9 (2 mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item2
+				{
+					position[]={11136.156,200.33842,11975.139};
+					azimut=394.76001;
+					special="NONE";
+					id=184;
+					side="CIV";
+					vehicle="Functionary1";
+					player="PLAY CDG";
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Functionary (Black Suit) - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+				class Item3
+				{
+					position[]={11133.079,200.52299,11975.521};
+					azimut=394.76001;
+					special="NONE";
+					id=181;
+					side="CIV";
+					vehicle="Rocker4";
+					player="PLAY CDG";
+					skill=1;
+					text="hippie";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Hippy - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+				class Item4
+				{
+					position[]={11134.523,200.34241,11974.104};
+					azimut=394.76001;
+					special="NONE";
+					id=188;
+					side="CIV";
+					vehicle="Functionary1";
+					player="PLAY CDG";
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Functionary (Black Suit) - Unarmed";
+					synchronizations[]={219,220,221};
+				};
+				class Item5
+				{
+					position[]={11133.792,200.42599,11974.719};
+					azimut=394.76001;
+					special="NONE";
+					id=189;
+					side="CIV";
+					vehicle="Functionary1";
+					player="PLAY CDG";
+					skill=1;
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="A Functionary (Black Suit) - Unarmed";
+					synchronizations[]={220,221,219};
+				};
+			};
+		};
+		class Item120
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={10294.415,362.67609,12060.252};
+					azimut=60.5191;
+					id=267;
+					side="WEST";
+					vehicle="USMC_SoldierS_SniperH";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="usmcsniper";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Sniper - M107 (2 mags) M9 (3 mags)";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={10294.194,362.63409,12058.789};
+					azimut=60.5191;
+					id=268;
+					side="WEST";
+					vehicle="USMC_SoldierS_Spotter";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="usmcspotter";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Spotter - M16A2 (3 mags), Map";
+				};
+			};
+		};
+		class Item121
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=6;
+				class Item0
+				{
+					position[]={2277.2002,515.32281,15304.707};
+					azimut=118.784;
+					special="NONE";
+					id=269;
+					side="WEST";
+					vehicle="FR_Assault_R";
+					player="PLAY CDG";
+					leader=1;
+					skill=1;
+					text="admin1";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Admin Slot (Non-Admin = Kick!)";
+					synchronizations[]={219,220,221};
+				};
+				class Item1
+				{
+					position[]={2276.4536,515.32922,15305.133};
+					azimut=118.784;
+					special="NONE";
+					id=254;
+					side="WEST";
+					vehicle="FR_Assault_R";
+					player="PLAY CDG";
+					skill=1;
+					text="admin2";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Admin Slot (Non-Admin = Kick!)";
+					synchronizations[]={220,219,221};
+				};
+				class Item2
+				{
+					position[]={2277.0435,515.19366,15303.931};
+					azimut=118.784;
+					special="NONE";
+					id=255;
+					side="WEST";
+					vehicle="FR_Assault_R";
+					player="PLAY CDG";
+					skill=1;
+					text="admin3";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Admin Slot (Non-Admin = Kick!)";
+					synchronizations[]={219,220,221};
+				};
+				class Item3
+				{
+					position[]={2276.0945,515.17773,15304.312};
+					azimut=118.784;
+					special="NONE";
+					id=256;
+					side="WEST";
+					vehicle="FR_Assault_R";
+					player="PLAY CDG";
+					skill=1;
+					text="admin4";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Admin Slot (Non-Admin = Kick!)";
+					synchronizations[]={221,220,219};
+				};
+				class Item4
+				{
+					position[]={2276.6035,515.04071,15303.144};
+					azimut=118.784;
+					special="NONE";
+					id=257;
+					side="WEST";
+					vehicle="FR_Assault_R";
+					player="PLAY CDG";
+					skill=1;
+					text="admin5";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Admin Slot (Non-Admin = Kick!)";
+					synchronizations[]={219,220,221};
+				};
+				class Item5
+				{
+					position[]={2275.7607,515.02448,15303.473};
+					azimut=118.784;
+					special="NONE";
+					id=258;
+					side="WEST";
+					vehicle="FR_Assault_R";
+					player="PLAY CDG";
+					skill=1;
+					text="admin6";
+					init="if (player==this) then {this setPos [getPos this select 0,getPos this select 1,1000];this enableSimulation false;this setVariable [""victim"",objNull,true]}; this addrating -10000;";
+					description="Admin Slot (Non-Admin = Kick!)";
+					synchronizations[]={219,220,221};
+				};
+			};
+		};
+		class Item122
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={11583.778,159.10446,10635.214};
+					id=294;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item123
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={11592.671,161.0276,10651.202};
+					azimut=207.129;
+					id=295;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item124
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={11573.686,161.07837,10645.506};
+					azimut=72.311707;
+					id=296;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item125
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={11597.773,158.70763,10631.168};
+					azimut=35.363564;
+					id=297;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item126
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={11604.646,158.6837,10643.449};
+					azimut=170.24039;
+					id=298;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item127
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0.75;
+					position[]={11575.787,157.18689,10628.678};
+					azimut=62.629128;
+					id=299;
+					side="GUER";
+					vehicle="GUE_Soldier_Scout";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""ambusher"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item128
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11570.58,166.0434,10665.247};
+					azimut=152.577;
+					id=300;
+					side="EAST";
+					vehicle="MVD_Soldier";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""slow armored"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item129
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11580.758,165.8761,10666.813};
+					azimut=182.67271;
+					id=301;
+					side="EAST";
+					vehicle="MVD_Soldier";
+					leader=1;
+					skill=0.60000002;
+					init="[this,""slow armored"",objNull,false,12] exec ""zombie_scripts\cly_z_init.sqs""";
+				};
+			};
+		};
+		class Item130
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12680.088,5.9932151,9686.3379};
+					azimut=203.58501;
+					special="NONE";
+					id=336;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="LumberMill";
+				};
+			};
+		};
+		class Item131
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11350.013,198.36314,12549.511};
+					azimut=203.58501;
+					special="NONE";
+					id=337;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="Krasnostav";
+				};
+			};
+		};
+		class Item132
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13394.477,91.505661,12816.287};
+					azimut=203.58501;
+					special="NONE";
+					id=354;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="Olsha";
+				};
+			};
+		};
+		class Item133
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={10586.593,99.569527,9864.4355};
+					azimut=203.58501;
+					special="NONE";
+					id=355;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="Dubrovka";
+				};
+			};
+		};
+		class Item134
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12325.064,33.996582,9022.7246};
+					azimut=203.58501;
+					special="NONE";
+					id=356;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="Berezino";
+				};
+			};
+		};
+		class Item135
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12341.921,111.99968,11016.182};
+					azimut=203.58501;
+					special="NONE";
+					id=357;
+					side="LOGIC";
+					vehicle="LocationLogic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="Khelm";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=192;
+		class Item0
+		{
+			position[]={13853.639,4.9927683,11704.005};
+			azimut=95;
+			special="NONE";
+			id=0;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""thedoctor"") then {deleteVehicle (_this select 0)};if (isNull thedoctor) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item1
+		{
+			position[]={13856.949,4.7436814,11699.851};
+			azimut=185;
+			special="NONE";
+			id=1;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""thewriter"") then {deleteVehicle (_this select 0)};if (isNull thewriter) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item2
+		{
+			position[]={13859.2,4.2434559,11714.389};
+			azimut=7.7339602;
+			special="NONE";
+			id=2;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""themarine"") then {deleteVehicle (_this select 0)};if (isNull themarine) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item3
+		{
+			position[]={13854.89,4.714828,11712.844};
+			azimut=-47.308899;
+			special="NONE";
+			id=3;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""thegeneral"") then {deleteVehicle (_this select 0)};if (isNull thegeneral) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item4
+		{
+			position[]={13853.058,4.970149,11708.375};
+			azimut=100;
+			special="NONE";
+			id=4;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""thepilot"") then {deleteVehicle (_this select 0)};if (isNull thepilot) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item5
+		{
+			position[]={13860.421,4.4098167,11699.566};
+			azimut=180;
+			special="NONE";
+			id=5;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""therifleman_1"") then {deleteVehicle (_this select 0)};if (isNull therifleman_1) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item6
+		{
+			position[]={13860.409,4.2658777,11706.736};
+			special="NONE";
+			id=6;
+			side="EMPTY";
+			vehicle="Land_Fire";
+			skill=0.2;
+			init="if (isServer) then {this inFlame true}";
+		};
+		class Item7
+		{
+			position[]={12927.313,209.64217,12763.674};
+			special="NONE";
+			id=7;
+			side="EMPTY";
+			vehicle="LocalBasicAmmunitionBox";
+			leader=1;
+			skill=0.2;
+			text="crate1";
+			init="[this,0] exec ""cly_crate.sqs""";
+		};
+		class Item8
+		{
+			position[]={11597.229,159.16624,10641.683};
+			azimut=130.978;
+			special="NONE";
+			id=8;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item9
+		{
+			position[]={11592.42,159.12399,10635.503};
+			azimut=116.48303;
+			special="NONE";
+			id=9;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item10
+		{
+			position[]={11578.324,159.45508,10637.802};
+			special="NONE";
+			id=10;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item11
+		{
+			position[]={11580.743,159.4834,10638.132};
+			azimut=81.128799;
+			special="NONE";
+			id=11;
+			side="EMPTY";
+			vehicle="FoldChair";
+			leader=1;
+			skill=0.2;
+			text="chair1";
+			init="this enableSimulation false; this allowDamage false";
+		};
+		class Item12
+		{
+			position[]={11594.172,159.81819,10644.483};
+			azimut=135.33;
+			special="NONE";
+			id=12;
+			side="EMPTY";
+			vehicle="Pickup_PK_GUE";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.2;
+			fuel=0.0099999998;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item13
+		{
+			position[]={11577.481,162.76114,10650.699};
+			azimut=155.974;
+			special="NONE";
+			id=13;
+			side="EMPTY";
+			vehicle="UAZ_INS";
+			leader=1;
+			lock="LOCKED";
+			skill=0.2;
+			fuel=0.02;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item14
+		{
+			position[]={11583.771,165.8089,10667.052};
+			azimut=-129.7066;
+			special="NONE";
+			id=14;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item15
+		{
+			position[]={11581.731,166.22449,10669.559};
+			azimut=-129.7066;
+			special="NONE";
+			id=15;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item16
+		{
+			position[]={11564.84,167.01982,10669.588};
+			azimut=-254.80452;
+			special="NONE";
+			id=16;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item17
+		{
+			position[]={11564.262,166.51665,10666.4};
+			azimut=-264.45654;
+			special="NONE";
+			id=17;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item18
+		{
+			position[]={11564.744,165.90672,10663.304};
+			azimut=-294.28629;
+			special="NONE";
+			id=18;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item19
+		{
+			position[]={11566.086,165.25412,10660.352};
+			azimut=-294.28629;
+			special="NONE";
+			id=19;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item20
+		{
+			position[]={11567.425,164.60187,10657.396};
+			azimut=-294.28629;
+			special="NONE";
+			id=20;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item21
+		{
+			position[]={11571.982,161.02994,10645.323};
+			azimut=-290.09668;
+			special="NONE";
+			id=21;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item22
+		{
+			position[]={11570.858,162.15001,10648.342};
+			azimut=-290.09668;
+			special="NONE";
+			id=22;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item23
+		{
+			position[]={11569.755,163.10818,10651.384};
+			azimut=-290.09668;
+			special="NONE";
+			id=23;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item24
+		{
+			position[]={11568.659,163.85611,10654.401};
+			azimut=-290.09668;
+			special="NONE";
+			id=24;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_long";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item25
+		{
+			position[]={11573.024,160.13234,10642.868};
+			azimut=45;
+			special="NONE";
+			id=25;
+			side="EMPTY";
+			vehicle="Hedgehog";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item26
+		{
+			position[]={11576.059,163.68892,10654.554};
+			azimut=252.27917;
+			special="NONE";
+			id=26;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			leader=1;
+			skill=0.2;
+		};
+		class Item27
+		{
+			position[]={11575.734,164.48488,10658.073};
+			azimut=279.46051;
+			special="NONE";
+			id=27;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			leader=1;
+			skill=0.2;
+		};
+		class Item28
+		{
+			position[]={11583.234,164.8111,10662.573};
+			azimut=414.44421;
+			special="NONE";
+			id=28;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			leader=1;
+			skill=0.2;
+		};
+		class Item29
+		{
+			position[]={11584.938,163.91579,10659.619};
+			azimut=426.27481;
+			special="NONE";
+			id=29;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			leader=1;
+			skill=0.2;
+		};
+		class Item30
+		{
+			position[]={11577.52,166.3735,10669.263};
+			special="NONE";
+			id=30;
+			side="EMPTY";
+			vehicle="Land_Fire_burning";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item31
+		{
+			position[]={11580.579,166.47696,10671.103};
+			azimut=90;
+			special="NONE";
+			id=31;
+			side="EMPTY";
+			vehicle="Hedgehog";
+			leader=1;
+			skill=0.2;
+			init="this allowDamage false";
+		};
+		class Item32
+		{
+			position[]={12190.51,172.25348,12600.793};
+			azimut=290;
+			special="NONE";
+			id=36;
+			side="EMPTY";
+			vehicle="USBasicAmmunitionBox";
+			leader=1;
+			skill=0.2;
+			text="crate2";
+			init="this setPosATL [getPos this select 0,getPos this select 1,10];this setPosATL [getPos this select 0,getPos this select 1,(getPosATL this select 2)-(getPos this select 2)];[this,2] exec ""cly_crate.sqs""";
+		};
+		class Item33
+		{
+			position[]={11256.578,194.13986,12218.932};
+			azimut=20;
+			special="NONE";
+			id=37;
+			side="EMPTY";
+			vehicle="USBasicWeaponsBox";
+			leader=1;
+			skill=0.2;
+			text="crate3";
+			init="this setVectorUp [0,0,1];this setPosATL [getPos this select 0,getPos this select 1,1];this setPosATL [getPos this select 0,getPos this select 1,(getPosATL this select 2)-(getPos this select 2)];[this,3] exec ""cly_crate.sqs""";
+		};
+		class Item34
+		{
+			position[]={12190.019,172.26799,12599.046};
+			azimut=305;
+			id=66;
+			side="EMPTY";
+			vehicle="SatPhone";
+			skill=0.60000002;
+			text="satphone";
+			init="this setVectorUp [0,0,1];this setPosATL [getPos this select 0,getPos this select 1,10.114];this enableSimulation false";
+		};
+		class Item35
+		{
+			position[]={11555.925,168.92548,12410.808};
+			azimut=300;
+			id=96;
+			side="EMPTY";
+			vehicle="LADAWreck";
+			skill=0.60000002;
+		};
+		class Item36
+		{
+			position[]={13821.945,33.138062,12552.473};
+			special="NONE";
+			id=97;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item37
+		{
+			position[]={14019.097,13.076781,12609.661};
+			special="NONE";
+			id=98;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item38
+		{
+			position[]={13903.509,25.519112,12724.783};
+			special="NONE";
+			id=99;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item39
+		{
+			position[]={13227.604,94.849396,11995.331};
+			special="NONE";
+			id=100;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item40
+		{
+			position[]={13385.17,84.994179,12161.935};
+			special="NONE";
+			id=101;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item41
+		{
+			position[]={14091.374,2.3114281,12101.681};
+			special="NONE";
+			id=102;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item42
+		{
+			position[]={14119.648,5.6017089,12375.866};
+			special="NONE";
+			id=103;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item43
+		{
+			position[]={13801.648,38.073483,12832.106};
+			special="NONE";
+			id=104;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item44
+		{
+			position[]={12963.613,112.25919,12260.974};
+			special="NONE";
+			id=105;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item45
+		{
+			position[]={13067.838,122.58446,12269.069};
+			special="NONE";
+			id=106;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item46
+		{
+			position[]={13234.124,105,12341.448};
+			special="NONE";
+			id=107;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item47
+		{
+			position[]={13227.943,94.670113,12157.228};
+			special="NONE";
+			id=108;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item48
+		{
+			position[]={13882.482,21.598728,12066.251};
+			special="NONE";
+			id=109;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item49
+		{
+			position[]={13501.538,46.708427,11851.99};
+			special="NONE";
+			id=110;
+			side="EMPTY";
+			vehicle="GuerillaCacheBox";
+			leader=1;
+			skill=0.2;
+			init="this exec ""geocache.sqs""";
+		};
+		class Item50
+		{
+			position[]={13047.751,127.52475,12463.026};
+			azimut=245;
+			id=111;
+			side="EMPTY";
+			vehicle="car_sedan";
+			leader=1;
+			skill=0.60000002;
+			health=0.46387312;
+			fuel=0.020819454;
+			ammo=0;
+			text="carwreck";
+			init="this addMagazineCargo [""FlareWhite_M203"",4]";
+		};
+		class Item51
+		{
+			position[]={13051.566,127.35037,12459.169};
+			azimut=305;
+			id=112;
+			side="AMBIENT LIFE";
+			vehicle="Cow03";
+			leader=1;
+			skill=0.60000002;
+			health=0;
+			init="this setVariable [""CLY_removedead"",false]";
+		};
+		class Item52
+		{
+			position[]={11480.718,317.29889,11326.832};
+			azimut=340;
+			id=115;
+			side="EMPTY";
+			vehicle="UAZ_MG_INS";
+			skill=0.60000002;
+			fuel=0.4011983;
+			text="car";
+		};
+		class Item53
+		{
+			position[]={11472.012,317.28561,11330.834};
+			id=116;
+			side="EMPTY";
+			vehicle="Land_Fire";
+			skill=0.60000002;
+			init="if (isServer) then {this inFlame true}";
+		};
+		class Item54
+		{
+			position[]={12146.879,158.89999,12614.887};
+			special="NONE";
+			id=152;
+			side="EMPTY";
+			vehicle="LocalBasicAmmunitionBox";
+			leader=1;
+			skill=0.2;
+			text="crate4";
+			init="[this,4] exec ""cly_crate.sqs""";
+		};
+		class Item55
+		{
+			position[]={13384.138,67,12101.516};
+			id=154;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item56
+		{
+			position[]={12821.122,208.15521,12743.85};
+			id=155;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item57
+		{
+			position[]={11924.725,158.89999,12663.371};
+			id=156;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item58
+		{
+			position[]={11871.79,153.8606,12513.691};
+			id=157;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item59
+		{
+			position[]={11685.264,165.75076,12613.979};
+			id=158;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item60
+		{
+			position[]={11510.05,171.93275,12418.062};
+			id=159;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item61
+		{
+			position[]={11255.16,194.13986,12221.574};
+			azimut=27;
+			id=160;
+			side="EMPTY";
+			vehicle="Misc_cargo_cont_tiny";
+			skill=0.60000002;
+		};
+		class Item62
+		{
+			position[]={11256.827,194.13986,12221.099};
+			azimut=27;
+			id=161;
+			side="EMPTY";
+			vehicle="Land_Ind_BoardsPack2";
+			skill=0.60000002;
+		};
+		class Item63
+		{
+			position[]={11251.473,194.13986,12225.065};
+			azimut=27;
+			id=162;
+			side="EMPTY";
+			vehicle="Land_Ind_BoardsPack1";
+			skill=0.60000002;
+		};
+		class Item64
+		{
+			position[]={11252.955,194.13986,12222.613};
+			azimut=117;
+			id=163;
+			side="EMPTY";
+			vehicle="Land_Ind_BoardsPack1";
+			skill=0.60000002;
+		};
+		class Item65
+		{
+			position[]={13315.997,67,11910.644};
+			id=167;
+			side="EMPTY";
+			vehicle="Sound_Frog";
+			skill=0.60000002;
+		};
+		class Item66
+		{
+			position[]={12191.774,172.28287,12602.166};
+			azimut=20;
+			special="NONE";
+			id=173;
+			side="EMPTY";
+			vehicle="Barrels";
+			leader=1;
+			skill=0.2;
+			init="this setPosATL [getPos this select 0,getPos this select 1,10];this setPosATL [getPos this select 0,getPos this select 1,(getPosATL this select 2)-(getPos this select 2)]";
+		};
+		class Item67
+		{
+			position[]={13863.771,4.0908327,11699.46};
+			azimut=180;
+			special="NONE";
+			id=182;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""themedic"") then {deleteVehicle (_this select 0)};if (isNull themedic) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item68
+		{
+			position[]={13863.232,3.8516662,11713.979};
+			azimut=185;
+			special="NONE";
+			id=190;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""demospec"") then {deleteVehicle (_this select 0)};if (isNull demospec) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item69
+		{
+			position[]={13866.795,3.571305,11709.826};
+			azimut=255;
+			special="NONE";
+			id=192;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""thegrenadier"") then {deleteVehicle (_this select 0)};if (isNull thegrenadier) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item70
+		{
+			position[]={13866.77,3.7030776,11703.745};
+			azimut=295;
+			special="NONE";
+			id=193;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""therifleman"") then {deleteVehicle (_this select 0)};if (isNull therifleman) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item71
+		{
+			position[]={11605.69,158.38057,10640.056};
+			azimut=100.896;
+			special="NONE";
+			id=197;
+			side="EMPTY";
+			vehicle="UralRepair_CDF";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			fuel=0.08736857;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item72
+		{
+			position[]={12012.969,159,12699.258};
+			azimut=5;
+			special="NONE";
+			id=198;
+			side="EMPTY";
+			vehicle="HeliH";
+			lock="UNLOCKED";
+			skill=0.60000002;
+		};
+		class Item73
+		{
+			position[]={12012.762,159,12695.11};
+			azimut=5;
+			special="NONE";
+			id=199;
+			side="EMPTY";
+			vehicle="MH60S";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			health=0.040875286;
+			fuel=0;
+			ammo=0.12611292;
+			init="this setHit [""motor"", 1]; this setHit [""mala vrtule"", 0.95]; this setVelocity [0,-1,0]";
+		};
+		class Item74
+		{
+			position[]={12080.519,158.8,12626.696};
+			azimut=20;
+			special="NONE";
+			id=200;
+			side="EMPTY";
+			vehicle="UAZ_MG_CDF";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			fuel=0.56101912;
+		};
+		class Item75
+		{
+			position[]={12058.717,158.85699,12628.116};
+			azimut=20;
+			special="NONE";
+			id=204;
+			side="EMPTY";
+			vehicle="Su25_CDF";
+			lock="LOCKED";
+			skill=0.2;
+			fuel=0;
+			ammo=0;
+		};
+		class Item76
+		{
+			position[]={12011.46,158.85703,12641.361};
+			azimut=20;
+			special="NONE";
+			id=205;
+			side="EMPTY";
+			vehicle="Su25_CDF";
+			lock="LOCKED";
+			skill=0.2;
+			fuel=0;
+			ammo=0;
+		};
+		class Item77
+		{
+			position[]={11190.534,200.70999,12268.682};
+			azimut=245;
+			id=206;
+			side="EMPTY";
+			vehicle="hiluxWreck";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item78
+		{
+			position[]={11228.052,202.63911,12333.622};
+			azimut=350;
+			id=207;
+			side="EMPTY";
+			vehicle="UH1Wreck";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item79
+		{
+			position[]={11151.497,206.25383,12293.064};
+			azimut=350;
+			id=208;
+			side="EMPTY";
+			vehicle="T72WreckTurret";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item80
+		{
+			position[]={11130.579,213.16525,12377.97};
+			azimut=285;
+			id=209;
+			side="EMPTY";
+			vehicle="Mi8Wreck";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item81
+		{
+			position[]={11235.979,189.33,12223.468};
+			azimut=10;
+			id=210;
+			side="EMPTY";
+			vehicle="LADAWreck";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+			fuel=0.048624214;
+		};
+		class Item82
+		{
+			position[]={11321.96,188.20552,12219.867};
+			azimut=30;
+			id=211;
+			side="EMPTY";
+			vehicle="datsun01Wreck";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+			fuel=0.10286634;
+		};
+		class Item83
+		{
+			position[]={11349.831,184.29262,12216.901};
+			azimut=345;
+			id=212;
+			side="EMPTY";
+			vehicle="datsun02Wreck";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item84
+		{
+			position[]={13885.47,2.0687561,11704.342};
+			azimut=235;
+			id=213;
+			side="EMPTY";
+			vehicle="Land_BoatSmall_1";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item85
+		{
+			position[]={13881.794,2.4765368,11694.624};
+			azimut=140;
+			id=214;
+			side="EMPTY";
+			vehicle="Land_BoatSmall_2a";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item86
+		{
+			position[]={13880.118,2.5384045,11701.441};
+			azimut=210;
+			id=215;
+			side="EMPTY";
+			vehicle="Land_BoatSmall_2b";
+			leader=1;
+			lock="LOCKED";
+			skill=0.60000002;
+		};
+		class Item87
+		{
+			position[]={13918.68,0.17925811,11696.143};
+			azimut=115;
+			id=216;
+			side="EMPTY";
+			vehicle="Smallboat_1";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init=" this setVelocity [0,-1,0]";
+		};
+		class Item88
+		{
+			position[]={13860.263,3.6997824,11764.613};
+			azimut=270;
+			special="NONE";
+			id=222;
+			side="EMPTY";
+			vehicle="UH1Wreck";
+			lock="LOCKED";
+			skill=0.60000002;
+			health=0;
+			fuel=0;
+			ammo=0;
+		};
+		class Item89
+		{
+			position[]={13858.766,4.144424,11748.936};
+			azimut=265;
+			id=223;
+			side="EMPTY";
+			vehicle="HMMWV";
+			skill=0.60000002;
+			fuel=0.048624214;
+			ammo=0;
+		};
+		class Item90
+		{
+			position[]={13855.969,4.4283156,11752.821};
+			azimut=265;
+			id=224;
+			side="EMPTY";
+			vehicle="HMMWV";
+			skill=0.60000002;
+			fuel=0.079619639;
+			ammo=0;
+		};
+		class Item91
+		{
+			position[]={12796.633,6.0127869,9665.7012};
+			azimut=72.244102;
+			special="NONE";
+			id=229;
+			side="EMPTY";
+			vehicle="HMMWV_Armored";
+			skill=0.2;
+			fuel=0.011503058;
+			ammo=0.73440039;
+		};
+		class Item92
+		{
+			position[]={13016.335,66.026596,13474.819};
+			azimut=67.243401;
+			special="NONE";
+			id=230;
+			side="EMPTY";
+			vehicle="UH1Wreck";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			ammo=0.1067408;
+		};
+		class Item93
+		{
+			position[]={15430.111,280.32846,15176.068};
+			azimut=203.58501;
+			special="NONE";
+			id=235;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item94
+		{
+			position[]={15434.979,281.01324,15184.767};
+			azimut=203.58501;
+			special="NONE";
+			id=236;
+			side="EMPTY";
+			vehicle="USMC_WarfareBUAVterminal";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="nul=[this,[Klen,LumberMill,Krasnostav,Olsha,Berezino,Dubrovka,Khelm],[]] execVM ""loadaction.sqf""";
+		};
+		class Item95
+		{
+			position[]={15438.335,281.10837,15193.324};
+			id=238;
+			side="EMPTY";
+			vehicle="LocalBasicAmmunitionBox";
+			skill=0.60000002;
+			text="respawn_crate";
+			init="clearWeaponCargo this; clearMagazineCargo this; _loadout1 = this addAction [(""<t color=""""#FF9900"""">"" + (""Select M4A1"") + ""</t>""), ""loadout.sqf"",1];  _loadout2 = this addAction [(""<t color=""""#FF9900"""">"" + (""Select M16A2"") + ""</t>""), ""loadout.sqf"",2];  _loadout3 = this addAction [(""<t color=""""#FF9900"""">"" + (""Select AKS-74U"") + ""</t>""), ""loadout.sqf"",3];  _loadout4 = this addAction [(""<t color=""""#FF9900"""">"" + (""Select MP5A5"") + ""</t>""), ""loadout.sqf"",4];";
+		};
+		class Item96
+		{
+			position[]={15425.697,280.44388,15181.068};
+			azimut=249.28069;
+			special="NONE";
+			id=239;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item97
+		{
+			position[]={15423.934,280.57098,15188.132};
+			azimut=259.23099;
+			special="NONE";
+			id=240;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item98
+		{
+			position[]={15423.637,280.58237,15196.077};
+			azimut=271.75027;
+			special="NONE";
+			id=241;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item99
+		{
+			position[]={15423.931,280.54462,15202.846};
+			azimut=273.57883;
+			special="NONE";
+			id=242;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item100
+		{
+			position[]={15425.111,280.57056,15210.201};
+			azimut=287.40692;
+			special="NONE";
+			id=243;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item101
+		{
+			position[]={15428.932,280.72095,15214.616};
+			azimut=339.04605;
+			special="NONE";
+			id=244;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item102
+		{
+			position[]={15436.291,280.78586,15215.498};
+			azimut=185.74353;
+			special="NONE";
+			id=245;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item103
+		{
+			position[]={15442.469,280.73502,15213.145};
+			azimut=582.06421;
+			special="NONE";
+			id=246;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item104
+		{
+			position[]={15446.587,280.70923,15207.554};
+			azimut=241.78117;
+			special="NONE";
+			id=247;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item105
+		{
+			position[]={15448.354,280.82642,15201.08};
+			azimut=266.90298;
+			special="NONE";
+			id=248;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item106
+		{
+			position[]={15448.355,281.0116,15193.725};
+			azimut=280.62811;
+			special="NONE";
+			id=249;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item107
+		{
+			position[]={15447.177,281.08771,15186.661};
+			azimut=107.73926;
+			special="NONE";
+			id=250;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item108
+		{
+			position[]={15444.529,280.92917,15179.599};
+			azimut=120.40675;
+			special="NONE";
+			id=251;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item109
+		{
+			position[]={15436.879,280.45081,15174.302};
+			azimut=176.60057;
+			special="NONE";
+			id=252;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item110
+		{
+			position[]={15441.294,280.64963,15175.774};
+			azimut=327.04675;
+			special="NONE";
+			id=253;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="this allowdamage false;";
+		};
+		class Item111
+		{
+			position[]={2317.2222,518.08069,15304.385};
+			azimut=207.845;
+			id=259;
+			side="EMPTY";
+			vehicle="M1A2_TUSK_MG";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item112
+		{
+			position[]={2323.0859,517.95728,15301.373};
+			azimut=207.845;
+			id=260;
+			side="EMPTY";
+			vehicle="M1A2_TUSK_MG";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item113
+		{
+			position[]={2328.5254,517.77814,15297.848};
+			azimut=207.845;
+			id=261;
+			side="EMPTY";
+			vehicle="M1A2_TUSK_MG";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item114
+		{
+			position[]={2334.9863,517.81207,15295.462};
+			azimut=207.845;
+			id=262;
+			side="EMPTY";
+			vehicle="M1A2_TUSK_MG";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item115
+		{
+			position[]={2284.1924,518.01788,15319.272};
+			azimut=477.84558;
+			id=263;
+			side="EMPTY";
+			vehicle="MASH";
+			skill=0.60000002;
+		};
+		class Item116
+		{
+			position[]={2272.6968,518.64569,15327.097};
+			azimut=477.84558;
+			id=264;
+			side="EMPTY";
+			vehicle="USMC_WarfareBVehicleServicePoint";
+			skill=0.60000002;
+		};
+		class Item117
+		{
+			position[]={2328.1782,521.33099,15323.662};
+			azimut=207.845;
+			id=270;
+			side="EMPTY";
+			vehicle="UH1Y";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item118
+		{
+			position[]={2311.8174,522.33704,15335.021};
+			azimut=207.845;
+			id=271;
+			side="EMPTY";
+			vehicle="UH1Y";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item119
+		{
+			position[]={2293.667,522.97278,15342.853};
+			azimut=207.845;
+			id=272;
+			side="EMPTY";
+			vehicle="UH1Y";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item120
+		{
+			position[]={10588.736,128.47701,9685.6865};
+			azimut=5;
+			special="NONE";
+			id=273;
+			side="EMPTY";
+			vehicle="Mi17_Civilian";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			health=0.033126451;
+			fuel=0;
+			ammo=0;
+			init="this setHit [""motor"", 1]; this setHit [""mala vrtule"", 0.95]; this setVelocity [0,-1,0]";
+		};
+		class Item121
+		{
+			position[]={10443.702,119.44858,9799.877};
+			azimut=-26.039101;
+			id=274;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate6";
+			init="[this,5] exec ""cly_crate.sqs""";
+		};
+		class Item122
+		{
+			position[]={10890.229,73.652718,9986.6846};
+			azimut=-136.668;
+			id=275;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item123
+		{
+			position[]={12292.481,89.275871,10611.963};
+			azimut=98.589302;
+			id=276;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate8";
+			init="[this,8] exec ""cly_crate.sqs""";
+		};
+		class Item124
+		{
+			position[]={12854.581,5.9788208,9953.0869};
+			azimut=26.206894;
+			id=277;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate8_1";
+			init="[this,8] exec ""cly_crate.sqs""";
+		};
+		class Item125
+		{
+			position[]={12051.563,53.990002,9139.2471};
+			azimut=-139.25301;
+			id=278;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate9";
+			init="[this,9] exec ""cly_crate.sqs""";
+		};
+		class Item126
+		{
+			position[]={13062.586,6,10085.817};
+			azimut=-74.652496;
+			id=279;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate10";
+			init="[this,10] exec ""cly_crate.sqs""";
+		};
+		class Item127
+		{
+			position[]={10362.006,157.7049,9572.1055};
+			azimut=84.658195;
+			id=280;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate10_1";
+			init="[this,10] exec ""cly_crate.sqs""";
+		};
+		class Item128
+		{
+			position[]={10262.034,168.36951,9551.874};
+			azimut=116.711;
+			id=281;
+			side="EMPTY";
+			vehicle="V3S_Civ";
+			skill=0.60000002;
+			fuel=0.08736857;
+		};
+		class Item129
+		{
+			position[]={13369.489,93.928627,12894.808};
+			azimut=272.72198;
+			id=282;
+			side="EMPTY";
+			vehicle="VWGolf";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+			fuel=0.095117405;
+			init=" this setVelocity [0,-1,0]";
+		};
+		class Item130
+		{
+			position[]={2327.3936,515.47803,15278.124};
+			azimut=320.99301;
+			id=283;
+			side="EMPTY";
+			vehicle="HMMWV_Armored";
+			skill=1;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item131
+		{
+			position[]={2323.145,514.88513,15274.712};
+			azimut=320.99301;
+			id=284;
+			side="EMPTY";
+			vehicle="HMMWV_Armored";
+			skill=1;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item132
+		{
+			position[]={2318.4839,514.17944,15271.004};
+			azimut=320.99301;
+			id=285;
+			side="EMPTY";
+			vehicle="HMMWV_Armored";
+			skill=1;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item133
+		{
+			position[]={2314.1992,513.48578,15267.817};
+			azimut=320.99301;
+			id=286;
+			side="EMPTY";
+			vehicle="HMMWV_MK19";
+			skill=1;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item134
+		{
+			position[]={2310.0029,512.7854,15264.759};
+			azimut=320.99301;
+			id=287;
+			side="EMPTY";
+			vehicle="HMMWV_MK19";
+			skill=1;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item135
+		{
+			position[]={12669.706,166.26746,12899.395};
+			azimut=252.29201;
+			id=288;
+			side="EMPTY";
+			vehicle="UralRefuel_CDF";
+			skill=1;
+			fuel=0.1183641;
+		};
+		class Item136
+		{
+			position[]={13028.521,0.00033646822,9614.7461};
+			azimut=442.01801;
+			id=289;
+			side="EMPTY";
+			vehicle="RHIB";
+			skill=1;
+			fuel=0.22297397;
+			ammo=0.60266918;
+			init=" this setVelocity [0,-1,0]";
+		};
+		class Item137
+		{
+			position[]={11588.775,159.60643,10638.088};
+			azimut=130.463;
+			special="NONE";
+			id=290;
+			side="EMPTY";
+			vehicle="Offroad_DSHKM_Gue";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.2;
+			fuel=0.0099999998;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item138
+		{
+			position[]={2301.1392,518.6203,15314.163};
+			azimut=385.224;
+			id=291;
+			side="EMPTY";
+			vehicle="USVehicleBox";
+			skill=0.60000002;
+			text="crate9999";
+			init="[this,9999] exec ""cly_crate.sqs""";
+		};
+		class Item139
+		{
+			position[]={12665.324,167.71951,12890.834};
+			azimut=-88.441597;
+			special="NONE";
+			id=292;
+			side="EMPTY";
+			vehicle="LocalBasicAmmunitionBox";
+			leader=1;
+			skill=0.2;
+			text="crate4_1";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item140
+		{
+			position[]={11590.613,162.08522,10654.7};
+			azimut=61.411301;
+			id=293;
+			side="EMPTY";
+			vehicle="SpecialWeaponsBox";
+			skill=0.60000002;
+			text="crate11";
+			init="[this,11] exec ""cly_crate.sqs""";
+		};
+		class Item141
+		{
+			position[]={10930.322,218.83209,11416.623};
+			azimut=145.334;
+			id=302;
+			side="EMPTY";
+			vehicle="MtvrReammo";
+			skill=0.60000002;
+			fuel=0.22684853;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item142
+		{
+			position[]={10944.137,217.1917,11388.655};
+			azimut=525.91052;
+			id=303;
+			side="EMPTY";
+			vehicle="HMMWVWreck";
+			skill=0.60000002;
+		};
+		class Item143
+		{
+			position[]={10958.425,219.43034,11395.833};
+			azimut=466.74142;
+			id=304;
+			side="EMPTY";
+			vehicle="HMMWVWreck";
+			skill=0.60000002;
+		};
+		class Item144
+		{
+			position[]={10928.262,216.64212,11397.711};
+			azimut=165.433;
+			id=305;
+			side="EMPTY";
+			vehicle="UH1Wreck";
+			skill=0.60000002;
+			ammo=0.45544061;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item145
+		{
+			position[]={10928.864,216.52045,11396.011};
+			azimut=115.60036;
+			id=306;
+			side="EMPTY";
+			vehicle="HeliHRescue";
+			skill=0.60000002;
+		};
+		class Item146
+		{
+			position[]={10961.857,220.6194,11403.491};
+			azimut=90;
+			id=307;
+			side="EMPTY";
+			vehicle="M2StaticMG";
+			skill=0.60000002;
+			ammo=0.43219391;
+		};
+		class Item147
+		{
+			position[]={10962.856,220.7408,11403.592};
+			azimut=90;
+			id=308;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			skill=0.60000002;
+		};
+		class Item148
+		{
+			position[]={10953.498,221.16391,11416.688};
+			azimut=52.585815;
+			id=309;
+			side="EMPTY";
+			vehicle="M2StaticMG";
+			skill=0.60000002;
+			ammo=0.43219391;
+		};
+		class Item149
+		{
+			position[]={10954.229,221.32161,11417.374};
+			azimut=52.585815;
+			id=310;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			skill=0.60000002;
+		};
+		class Item150
+		{
+			position[]={10937.757,216.20581,11384.834};
+			azimut=185.08459;
+			id=311;
+			side="EMPTY";
+			vehicle="M2StaticMG";
+			skill=0.60000002;
+			ammo=0.43219391;
+		};
+		class Item151
+		{
+			position[]={10937.771,216.11479,11383.83};
+			azimut=185.08459;
+			id=312;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			skill=0.60000002;
+		};
+		class Item152
+		{
+			position[]={10922.033,217.54042,11410.494};
+			azimut=286.11237;
+			id=313;
+			side="EMPTY";
+			vehicle="M2StaticMG";
+			skill=0.60000002;
+			ammo=0.43219391;
+		};
+		class Item153
+		{
+			position[]={10921.047,217.491,11410.672};
+			azimut=286.11237;
+			id=314;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			skill=0.60000002;
+		};
+		class Item154
+		{
+			position[]={10935.557,219.92087,11422.365};
+			azimut=0.70343077;
+			id=315;
+			side="EMPTY";
+			vehicle="M2StaticMG";
+			skill=0.60000002;
+			ammo=0.43219391;
+		};
+		class Item155
+		{
+			position[]={10935.465,220.02582,11423.365};
+			azimut=0.70343077;
+			id=316;
+			side="EMPTY";
+			vehicle="Land_fort_bagfence_round";
+			skill=0.60000002;
+		};
+		class Item156
+		{
+			position[]={10951.962,218.23312,11390.99};
+			azimut=505.10544;
+			id=317;
+			side="EMPTY";
+			vehicle="CampEast";
+			skill=0.60000002;
+		};
+		class Item157
+		{
+			position[]={10945.153,220.51636,11418.946};
+			azimut=378.00513;
+			id=318;
+			side="EMPTY";
+			vehicle="CampEast";
+			skill=0.60000002;
+		};
+		class Item158
+		{
+			position[]={10940.646,218.01593,11400.298};
+			azimut=187.28767;
+			id=319;
+			side="EMPTY";
+			vehicle="Misc_cargo_cont_net3";
+			skill=0.60000002;
+		};
+		class Item159
+		{
+			position[]={10941.546,218.75642,11406.382};
+			azimut=303.79828;
+			id=320;
+			side="EMPTY";
+			vehicle="Misc_cargo_cont_net3";
+			skill=0.60000002;
+		};
+		class Item160
+		{
+			position[]={10946.616,218.62051,11400.299};
+			azimut=512.33667;
+			id=321;
+			side="EMPTY";
+			vehicle="Misc_cargo_cont_net3";
+			skill=0.60000002;
+		};
+		class Item161
+		{
+			position[]={10928.904,217.96448,11409.765};
+			azimut=-245.69299;
+			id=322;
+			side="EMPTY";
+			vehicle="USBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate12";
+			init="[this,12] exec ""cly_crate.sqs""";
+		};
+		class Item162
+		{
+			position[]={10771.851,250.67664,12406.622};
+			azimut=-8.66399;
+			id=323;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate10_2";
+			init="[this,10] exec ""cly_crate.sqs""";
+		};
+		class Item163
+		{
+			position[]={10770.646,250.96198,12414.09};
+			azimut=-8.66399;
+			id=324;
+			side="EMPTY";
+			vehicle="car_hatchback";
+			skill=0.60000002;
+			fuel=0.08736857;
+			init="clearWeaponCargo this; clearMagazineCargo this; this setVelocity [0,-1,0]";
+		};
+		class Item164
+		{
+			position[]={12062.082,53.999722,9136.5908};
+			azimut=403.121;
+			id=325;
+			side="EMPTY";
+			vehicle="UralRefuel_CDF";
+			skill=1;
+			fuel=0.16485748;
+		};
+		class Item165
+		{
+			position[]={10291.653,362.59204,12056.671};
+			azimut=506.229;
+			id=326;
+			side="EMPTY";
+			vehicle="M1030";
+			skill=1;
+			fuel=0.02;
+		};
+		class Item166
+		{
+			position[]={10295.572,362.60181,12055.704};
+			azimut=337.16901;
+			special="NONE";
+			id=327;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""usmcspotter"") then {deleteVehicle (_this select 0)};if (isNull usmcspotter) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item167
+		{
+			position[]={10291.038,362.5322,12060.714};
+			azimut=464.70999;
+			special="NONE";
+			id=328;
+			side="EMPTY";
+			vehicle="Land_A_tent";
+			skill=0.2;
+			init="if (isServer) then {0=[this] spawn {sleep 0.1;if (isNil ""usmcsniper"") then {deleteVehicle (_this select 0)};if (isNull usmcsniper) then {deleteVehicle (_this select 0)}}}";
+		};
+		class Item168
+		{
+			position[]={11130.229,200.33939,11969.607};
+			azimut=37.303955;
+			id=329;
+			side="EMPTY";
+			vehicle="MTVR";
+			skill=0.60000002;
+			fuel=0;
+		};
+		class Item169
+		{
+			position[]={13131.933,5.9663963,10240.976};
+			azimut=287.888;
+			id=330;
+			side="EMPTY";
+			vehicle="UralRepair_CDF";
+			skill=1;
+			fuel=0.1183641;
+		};
+		class Item170
+		{
+			position[]={11138.509,198.8736,11958.068};
+			azimut=-251.59486;
+			id=331;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7_1";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item171
+		{
+			position[]={12021.275,54,9100.0225};
+			azimut=68.602997;
+			id=332;
+			side="EMPTY";
+			vehicle="car_hatchback";
+			skill=0.60000002;
+			fuel=0.10286634;
+		};
+		class Item172
+		{
+			position[]={13003.219,45.130302,11547.825};
+			azimut=-46.630901;
+			id=333;
+			side="EMPTY";
+			vehicle="hilux1_civil_2_covered";
+			skill=0.60000002;
+			fuel=0.064121976;
+		};
+		class Item173
+		{
+			position[]={11987.596,159,12715.914};
+			azimut=5;
+			special="NONE";
+			id=334;
+			side="EMPTY";
+			vehicle="HeliH";
+			lock="UNLOCKED";
+			skill=0.60000002;
+		};
+		class Item174
+		{
+			presence=0.19402333;
+			position[]={11987.389,159,12711.767};
+			azimut=5;
+			special="NONE";
+			id=335;
+			side="EMPTY";
+			vehicle="Mi17_CDF";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			health=0.013754128;
+			fuel=0;
+			ammo=0.12611292;
+			init="this setHit [""motor"", 1]; this setHit [""mala vrtule"", 0.95]; this setVelocity [0,-1,0]";
+		};
+		class Item175
+		{
+			position[]={12339.63,107.7133,10967.09};
+			azimut=98.589302;
+			id=338;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate8_2";
+			init="[this,8] exec ""cly_crate.sqs""";
+		};
+		class Item176
+		{
+			position[]={12692.939,10.01,10044.217};
+			azimut=-74.652496;
+			id=339;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate10_3";
+			init="[this,10] exec ""cly_crate.sqs""";
+		};
+		class Item177
+		{
+			position[]={12280.44,18.305759,9464.874};
+			azimut=-29.17588;
+			id=340;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate10_4";
+			init="[this,10] exec ""cly_crate.sqs""";
+		};
+		class Item178
+		{
+			position[]={12264.577,33.904499,9108.7354};
+			azimut=35.435806;
+			id=341;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate10_5";
+			init="[this,10] exec ""cly_crate.sqs""";
+		};
+		class Item179
+		{
+			position[]={11150.406,199.44014,12209.835};
+			azimut=-147.83427;
+			id=342;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7_2";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item180
+		{
+			position[]={11033.588,222.92659,12402.162};
+			azimut=-136.668;
+			id=343;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7_3";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item181
+		{
+			position[]={11829.158,148.545,12417.922};
+			azimut=-136.668;
+			id=344;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7_4";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item182
+		{
+			position[]={11586.78,168.99466,12436.874};
+			azimut=-163.95778;
+			id=345;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7_5";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item183
+		{
+			position[]={13095.691,5.9909225,10417.198};
+			azimut=-163.95778;
+			id=346;
+			side="EMPTY";
+			vehicle="LocalBasicWeaponsBox";
+			skill=0.60000002;
+			text="crate7_5_1";
+			init="[this,7] exec ""cly_crate.sqs""";
+		};
+		class Item184
+		{
+			position[]={2280.1655,515.20764,15302.419};
+			azimut=300;
+			id=347;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			skill=0.60000002;
+			init="this allowdamage false";
+		};
+		class Item185
+		{
+			position[]={2273.8892,515.26123,15305.999};
+			azimut=300;
+			id=348;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			skill=0.60000002;
+			init="this allowdamage false";
+		};
+		class Item186
+		{
+			position[]={2279.0964,515.86713,15307.347};
+			azimut=210;
+			id=349;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			skill=0.60000002;
+			init="this allowdamage false";
+		};
+		class Item187
+		{
+			position[]={2274.7263,514.52856,15300.745};
+			azimut=210;
+			id=350;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			skill=0.60000002;
+			init="this allowdamage false";
+		};
+		class Item188
+		{
+			position[]={2263.0156,511.98679,15290.114};
+			azimut=113.245;
+			id=351;
+			side="EMPTY";
+			vehicle="AH1Z";
+			skill=0.60000002;
+			init="veh = [this, 15, 120] execVM ""vehicle.sqf""";
+		};
+		class Item189
+		{
+			position[]={2253.0049,508.6286,15272.894};
+			azimut=113.245;
+			id=352;
+			side="EMPTY";
+			vehicle="AH64D";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item190
+		{
+			position[]={2246.6545,506.00809,15254.175};
+			azimut=113.245;
+			id=353;
+			side="EMPTY";
+			vehicle="AH64D";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+		class Item191
+		{
+			position[]={2294.5908,509.04953,15242.633};
+			azimut=207.845;
+			id=358;
+			side="EMPTY";
+			vehicle="C130J";
+			skill=0.60000002;
+			init="veh = [this, 15, 50] execVM ""vehicle.sqf""";
+		};
+	};
+	class Markers
+	{
+		items=5;
+		class Item0
+		{
+			position[]={15437.426,280.98193,15200.567};
+			name="respawn_civilian";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorWhite";
+			a=20;
+			b=20;
+		};
+		class Item1
+		{
+			position[]={15438.139,280.88315,15205.799};
+			name="respawn_west";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={15437.425,280.93753,15202.398};
+			name="respawn_east";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={15437.898,281.00964,15199.384};
+			name="respawn_base";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={2272.333,510.9115,15277.021};
+			name="adminbase";
+			text="Admin Base";
+			type="mil_marker";
+			colorName="ColorRed";
+		};
+	};
+	class Sensors
+	{
+		items=226;
+		class Item0
+		{
+			position[]={12935.488,239.12265,12763.54};
+			a=250;
+			b=250;
+			activationBy="ANY";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Tower man suicide";
+			expCond="isServer and {isPlayer _x} count thisList>0";
+			expActiv="towerman setVehicleAmmo 0.5;towerman switchMove ""amovpercmstpsraswpstdnon"";towerman fire currentWeapon towerman;nul=[] spawn {sleep 0.5;towerman setVehicleInit ""this switchMove 'adthpercmstpsnonwnondnon_1'"";processInitCommands;sleep 0.1;towerman setDamage 1;{towerman setHit [_x,0]} forEach [""legs"",""body"",""hands""]}";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={12061.914,158.85699,12636.002};
+			a=220;
+			b=220;
+			activationBy="ANY";
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			age="UNKNOWN";
+			text="Trigger horde";
+			name="horde1trigger";
+			expCond="isServer and {isPlayer _x and currentWeapon _x!=""""} count thisList>0";
+			expActiv="CLY_hordetrigger=""horde1"";publicVariable ""CLY_hordetrigger"";0=[] spawn {sleep 10;{if (_x getVariable ""zombietype"" in [""normal"",""surprise""] and _x distance satphone<400) then {_x setVariable [""horde"",true]}} forEach allUnits}";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={11143.922,217.40891,12480.999};
+			a=0;
+			b=0;
+			activationBy="ANY";
+			interruptable=1;
+			age="UNKNOWN";
+			text="Trigger horde";
+			expCond="isServer and obj3done and {currentWeapon _x!=""""} count CLY_players>0";
+			expActiv="CLY_hordetrigger=""horde2"";publicVariable ""CLY_hordetrigger"";0=[] spawn {sleep 10;{if (_x getVariable ""zombietype"" in [""normal"",""surprise""] and canStand _x) then {_x setVariable [""horde"",true]}} forEach allUnits}";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={11809.003,211.71588,11291.125};
+			a=2600;
+			b=2600;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Damage map objects";
+			expCond="true";
+			expActiv="{if (damage _x<0.5) then {_x setDamage 0.5}} forEach nearestObjects [thisTrigger,[""House""],triggerArea thisTrigger select 0]";
+			class Effects
+			{
+			};
+		};
+		class Item4
+		{
+			position[]={12108.328,158.99251,12621.116};
+			a=170;
+			b=140;
+			angle=20;
+			activationBy="ANY";
+			timeoutMin=30;
+			timeoutMid=30;
+			timeoutMax=30;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="isServer and {isPlayer _x} count thisList>0 and {!isPlayer _x and (_x getVariable ""horde"") and speed _x>0} count thisList<4";
+			expActiv="satphone setVehicleInit ""[this,'radionoise',65] exec 'soundloop.sqs';this addAction ['Respond to call','radiocall.sqs',false,5,true,true,'','player distance satphone<3']"";processInitCommands;obj2hint=true;publicVariable ""obj2hint""";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={11283.034,188.98,12221.961};
+			a=2;
+			b=2;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Destroy map objects";
+			expCond="true";
+			expActiv="{if !(_x isKindOf ""AllVehicles"") then {_x setDamage 1}} forEach nearestObjects [thisTrigger,[],triggerArea thisTrigger select 0]";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={12197.978,168.43079,12597.979};
+			a=10;
+			b=10;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			age="UNKNOWN";
+			text="Damage map objects";
+			expCond="true";
+			expActiv="{_x setHit [""dam tower"",1]} forEach nearestObjects [thisTrigger,[""House""],10]";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={12198.492,162.94762,12594.202};
+			a=1;
+			b=2;
+			angle=23;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=3;
+			timeoutMid=3;
+			timeoutMax=3;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="{getPosATL _x select 2>1} count thisList>0";
+			expActiv="{if (getPosATL _x select 2>1) then {_x setPosATL [getPos _x select 0,getPos _x select 1,0.5]}} forEach thisList";
+			class Effects
+			{
+			};
+		};
+		class Item8
+		{
+			position[]={11254.525,194.08,12211.723};
+			a=5;
+			b=5;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			age="UNKNOWN";
+			text="Damage map objects";
+			name="demolitiontrigger4";
+			expCond="true";
+			expActiv="{_x setHit [""glass"",1]} forEach nearestObjects [demolitiontrigger4,[""House""],5]";
+			class Effects
+			{
+			};
+		};
+		class Item9
+		{
+			position[]={500,551.08691,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item10
+		{
+			position[]={1500,384.48325,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item11
+		{
+			position[]={2500,517.87329,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item12
+		{
+			position[]={3500,457.34015,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item13
+		{
+			position[]={4500,419.38348,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item14
+		{
+			position[]={5500,468.65689,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item15
+		{
+			position[]={6500,410.0668,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item16
+		{
+			position[]={7500,291.33987,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item17
+		{
+			position[]={8500,242.56709,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item18
+		{
+			position[]={9500,305.61374,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item19
+		{
+			position[]={10500,135.6306,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item20
+		{
+			position[]={11500,133.0302,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item21
+		{
+			position[]={12500,115.6602,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item22
+		{
+			position[]={13500,92.876968,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item23
+		{
+			position[]={14500,73.56395,14860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item24
+		{
+			position[]={500,380.80002,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item25
+		{
+			position[]={1500,428.5697,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item26
+		{
+			position[]={2500,426.1604,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item27
+		{
+			position[]={3500,374.43677,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item28
+		{
+			position[]={4500,336.95029,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item29
+		{
+			position[]={5500,346.82333,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item30
+		{
+			position[]={6500,333.6333,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item31
+		{
+			position[]={7500,345.67996,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item32
+		{
+			position[]={8500,200.25659,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item33
+		{
+			position[]={9500,100.76025,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item34
+		{
+			position[]={10500,132.84995,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item35
+		{
+			position[]={11500,90.369873,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item36
+		{
+			position[]={12500,54.74654,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item37
+		{
+			position[]={13500,9.9002991,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item38
+		{
+			position[]={14500,50.203499,13860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item39
+		{
+			position[]={500,387.70328,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item40
+		{
+			position[]={1500,293.90671,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item41
+		{
+			position[]={2500,274.84341,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item42
+		{
+			position[]={3500,190.6167,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item43
+		{
+			position[]={4500,174.53328,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item44
+		{
+			position[]={5500,206.87691,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item45
+		{
+			position[]={6500,180.28342,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item46
+		{
+			position[]={7500,167.7803,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item47
+		{
+			position[]={8500,139.30707,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item48
+		{
+			position[]={9500,151.99004,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item49
+		{
+			position[]={10500,245.87505,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item50
+		{
+			position[]={11500,190.60997,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,50] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item51
+		{
+			position[]={12500,166.96664,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,50] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item52
+		{
+			position[]={13500,72.916626,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,50] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item53
+		{
+			position[]={14500,0.05973573,12860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.2] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item54
+		{
+			position[]={500,407.25998,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item55
+		{
+			position[]={1500,252.23,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item56
+		{
+			position[]={2500,235.61331,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item57
+		{
+			position[]={3500,288.54999,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item58
+		{
+			position[]={4500,262.54425,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item59
+		{
+			position[]={5500,217.62997,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item60
+		{
+			position[]={6500,264.45999,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item61
+		{
+			position[]={7500,298.07327,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item62
+		{
+			position[]={8500,184.47331,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item63
+		{
+			position[]={9500,234.04338,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item64
+		{
+			position[]={10500,294.36658,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item65
+		{
+			position[]={11500,195.74326,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item66
+		{
+			position[]={12500,74.176537,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item67
+		{
+			position[]={13500,46.654446,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item68
+		{
+			position[]={14500,0.23651916,11860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item69
+		{
+			position[]={500,425.00995,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item70
+		{
+			position[]={1500,278.25021,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item71
+		{
+			position[]={2500,294.61673,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item72
+		{
+			position[]={3500,339.86658,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item73
+		{
+			position[]={4500,338.98999,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item74
+		{
+			position[]={5500,288.18991,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item75
+		{
+			position[]={6500,316.67001,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item76
+		{
+			position[]={7500,267.63986,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item77
+		{
+			position[]={8500,284.32327,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item78
+		{
+			position[]={9500,234.95348,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item79
+		{
+			position[]={10500,155.27008,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item80
+		{
+			position[]={11500,195.15013,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,20] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item81
+		{
+			position[]={12500,86.186676,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item82
+		{
+			position[]={13500,0.050457373,10860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item83
+		{
+			position[]={500,361.39011,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item84
+		{
+			position[]={1500,326.9267,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item85
+		{
+			position[]={2500,259.38004,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item86
+		{
+			position[]={3500,312.00342,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item87
+		{
+			position[]={4500,339.02335,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item88
+		{
+			position[]={5500,307.66327,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item89
+		{
+			position[]={6500,338.18317,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item90
+		{
+			position[]={7500,393.9397,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item91
+		{
+			position[]={8500,400.23996,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item92
+		{
+			position[]={9500,286.88327,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item93
+		{
+			position[]={10500,109.06914,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item94
+		{
+			position[]={11500,42.573326,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item95
+		{
+			position[]={12500,8.9299583,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item96
+		{
+			position[]={13500,0.13360189,9860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.2] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item97
+		{
+			position[]={500,249.05,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item98
+		{
+			position[]={1500,333.02002,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item99
+		{
+			position[]={2500,275.23663,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item100
+		{
+			position[]={3500,299.93002,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item101
+		{
+			position[]={4500,323.14999,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item102
+		{
+			position[]={5500,328.13998,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item103
+		{
+			position[]={6500,379.57156,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item104
+		{
+			position[]={7500,396.65335,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item105
+		{
+			position[]={8500,403.41998,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item106
+		{
+			position[]={9500,304,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item107
+		{
+			position[]={10500,226.4734,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item108
+		{
+			position[]={11500,120.7299,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item109
+		{
+			position[]={12500,19.876558,8860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,80] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item110
+		{
+			position[]={500,238.35666,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item111
+		{
+			position[]={1500,270.38004,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item112
+		{
+			position[]={2500,357.37665,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item113
+		{
+			position[]={3500,298.12335,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item114
+		{
+			position[]={4500,304.10004,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item115
+		{
+			position[]={5500,319.39334,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item116
+		{
+			position[]={6500,312.56683,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item117
+		{
+			position[]={7500,332.66006,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item118
+		{
+			position[]={8500,346.11993,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item119
+		{
+			position[]={9500,196.37328,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item120
+		{
+			position[]={10500,185.62317,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item121
+		{
+			position[]={11500,266.09998,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item122
+		{
+			position[]={12500,92.85331,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item123
+		{
+			position[]={13500,0.20076713,7860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.2] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item124
+		{
+			position[]={500,303.93665,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item125
+		{
+			position[]={1500,188.63336,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item126
+		{
+			position[]={2500,364.03662,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item127
+		{
+			position[]={3500,344.63998,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item128
+		{
+			position[]={4500,273.50006,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item129
+		{
+			position[]={5500,296.42337,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item130
+		{
+			position[]={6500,341.25665,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item131
+		{
+			position[]={7500,301.31335,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item132
+		{
+			position[]={8500,336.01328,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item133
+		{
+			position[]={9500,231.22662,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item134
+		{
+			position[]={10500,124.05961,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item135
+		{
+			position[]={11500,125.16009,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item136
+		{
+			position[]={12500,161.79988,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,30] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item137
+		{
+			position[]={13500,0.14015661,6860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item138
+		{
+			position[]={500,167.85002,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item139
+		{
+			position[]={1500,194.89008,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item140
+		{
+			position[]={2500,266.04337,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item141
+		{
+			position[]={3500,341.82675,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item142
+		{
+			position[]={4500,306.59662,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item143
+		{
+			position[]={5500,270.48312,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item144
+		{
+			position[]={6500,317.22,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item145
+		{
+			position[]={7500,244.0799,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item146
+		{
+			position[]={8500,263.63336,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item147
+		{
+			position[]={9500,300.11008,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item148
+		{
+			position[]={10500,279.64481,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item149
+		{
+			position[]={11500,195.90314,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item150
+		{
+			position[]={12500,94.856735,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item151
+		{
+			position[]={13500,0.27014291,5860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item152
+		{
+			position[]={500,75.979897,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item153
+		{
+			position[]={1500,148.84998,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item154
+		{
+			position[]={2500,206.14658,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item155
+		{
+			position[]={3500,247.95663,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item156
+		{
+			position[]={4500,283.95016,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item157
+		{
+			position[]={5500,233.99319,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item158
+		{
+			position[]={6500,221.21341,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item159
+		{
+			position[]={7500,211.76897,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item160
+		{
+			position[]={8500,137.22983,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item161
+		{
+			position[]={9500,98.909973,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item162
+		{
+			position[]={10500,209.2198,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item163
+		{
+			position[]={11500,194.56683,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item164
+		{
+			position[]={12500,170.62639,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item165
+		{
+			position[]={13500,5.5300016,4860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.7] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item166
+		{
+			position[]={500,48.273342,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item167
+		{
+			position[]={1500,121.02002,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item168
+		{
+			position[]={2500,167.95004,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item169
+		{
+			position[]={3500,183.34671,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item170
+		{
+			position[]={4500,147.53429,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item171
+		{
+			position[]={5500,165.31329,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item172
+		{
+			position[]={6500,110.74002,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item173
+		{
+			position[]={7500,48.213432,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item174
+		{
+			position[]={8500,242.29684,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item175
+		{
+			position[]={9500,234.02676,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item176
+		{
+			position[]={10500,93.820198,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item177
+		{
+			position[]={11500,163.01312,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item178
+		{
+			position[]={12500,52.809593,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item179
+		{
+			position[]={13500,0.1548938,3860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.7] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item180
+		{
+			position[]={500,113.44997,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item181
+		{
+			position[]={1500,47.996689,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item182
+		{
+			position[]={2500,85.80336,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item183
+		{
+			position[]={3500,36.093334,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item184
+		{
+			position[]={4500,13.179981,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item185
+		{
+			position[]={5500,58.233418,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item186
+		{
+			position[]={6500,5.9933329,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item187
+		{
+			position[]={7500,3.2614419,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item188
+		{
+			position[]={8500,5.5903955,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item189
+		{
+			position[]={9500,148.81319,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item190
+		{
+			position[]={10500,76.303696,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item191
+		{
+			position[]={11500,0.36414951,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.5] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item192
+		{
+			position[]={12500,0.33895445,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item193
+		{
+			position[]={13500,14.070098,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.5] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item194
+		{
+			position[]={14500,0.31670308,2860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item195
+		{
+			position[]={500,25.123322,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item196
+		{
+			position[]={1500,0.40782017,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.5] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item197
+		{
+			position[]={2500,0.42294559,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.5] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item198
+		{
+			position[]={3500,0.36871269,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.3] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item199
+		{
+			position[]={4500,0.26977721,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.2] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item200
+		{
+			position[]={5500,0.3580977,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.5] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item201
+		{
+			position[]={6500,0.22204526,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.5] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item202
+		{
+			position[]={7500,0.30666184,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item203
+		{
+			position[]={8500,0.23068988,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-0.1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item204
+		{
+			position[]={9500,10.023496,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item205
+		{
+			position[]={10500,0.2400407,1860};
+			a=500;
+			b=500;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,-1] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item206
+		{
+			position[]={12300.78,99.458153,10802.125};
+			a=100;
+			b=260;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,40] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item207
+		{
+			position[]={13350.928,94,12869.335};
+			a=80;
+			b=80;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,15] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item208
+		{
+			position[]={13407.016,3.8736815,10902.956};
+			a=100;
+			b=100;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,60] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item209
+		{
+			position[]={12830.869,70.148071,11175.959};
+			a=600;
+			b=100;
+			angle=20;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,150] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item210
+		{
+			position[]={12016.246,158.85703,12647.812};
+			a=10;
+			b=10;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Zombie horde";
+			expCond="true";
+			expActiv="0=[thisTrigger,8,""horde1""] execVM ""zombie_scripts\cly_z_horde.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item211
+		{
+			position[]={12053.136,158.85699,12610.823};
+			a=10;
+			b=10;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Zombie horde";
+			expCond="true";
+			expActiv="0=[thisTrigger,10,""horde1""] execVM ""zombie_scripts\cly_z_horde.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item212
+		{
+			position[]={10925.447,239.97234,12493.264};
+			a=25;
+			b=25;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Zombie horde";
+			expCond="true";
+			expActiv="0=[thisTrigger,15,""horde2""] execVM ""zombie_scripts\cly_z_horde.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item213
+		{
+			position[]={15304.032,0.50544274,12012.133};
+			a=0;
+			b=0;
+			repeating=1;
+			timeoutMin=0.1;
+			timeoutMid=0.1;
+			timeoutMax=0.1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Save and reset player rating";
+			expCond="rating player!=0 and !CLY_alldead";
+			expActiv="CLY_playerrating=CLY_playerrating+(abs rating player);player addRating -(rating player)";
+			class Effects
+			{
+			};
+		};
+		class Item214
+		{
+			position[]={11113.749,223.76344,12329.74};
+			a=220;
+			b=100;
+			angle=30;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,70] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item215
+		{
+			position[]={12066.627,127.78859,11715.138};
+			a=500;
+			b=100;
+			angle=40;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,50] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item216
+		{
+			position[]={12147.578,160.50031,12620.007};
+			a=2;
+			b=2;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Hide map objects";
+			expCond="true";
+			expActiv="{if !(_x isKindOf ""AllVehicles"") then {_x hideObject true}} forEach nearestObjects [thisTrigger,[],2]";
+			class Effects
+			{
+			};
+		};
+		class Item217
+		{
+			position[]={15307.734,0.35520086,11800.872};
+			a=0;
+			b=0;
+			timeoutMin=5;
+			timeoutMid=5;
+			timeoutMax=5;
+			age="UNKNOWN";
+			text="Doctor hint";
+			expCond="typeOf player==""Assistant"" and obj1activated";
+			expActiv="hint ""As the doctor, you have a generous amount of bandages. Be sure to share them with your teammates, as they start with only one!""";
+			class Effects
+			{
+			};
+		};
+		class Item218
+		{
+			position[]={15204.056,0.13512854,11802.864};
+			a=0;
+			b=0;
+			timeoutMin=5;
+			timeoutMid=5;
+			timeoutMax=5;
+			age="UNKNOWN";
+			text="Pilot hint";
+			expCond="typeOf player==""Pilot"" and obj1activated";
+			expActiv="hint ""As the pilot, you have a GPS map that shows where everyone is. You also know the location of a geocache that may contain useful things.""";
+			class Effects
+			{
+			};
+		};
+		class Item219
+		{
+			position[]={15303.056,0.21394931,11891.048};
+			a=0;
+			b=0;
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Respawn";
+			expCond="!alive player";
+			expActiv="0=[] spawn {waitUntil {alive player};removeAllWeapons player;player execVM ""login.sqf"";player enableSimulation true}";
+			class Effects
+			{
+			};
+		};
+		class Item220
+		{
+			position[]={15304.206,0.15360004,12133.266};
+			a=0;
+			b=0;
+			repeating=1;
+			timeoutMin=5;
+			timeoutMid=5;
+			timeoutMax=5;
+			interruptable=1;
+			age="UNKNOWN";
+			text="End if all dead";
+			expCond="(isServer and count CLY_players==0) or CLY_alldead";
+			expActiv="CLY_alldead=true;publicVariable ""CLY_alldead"";player addRating CLY_playerrating;endMission ""LOSER""";
+			class Effects
+			{
+			};
+		};
+		class Item221
+		{
+			position[]={2226.7476,510.16962,15296.08};
+			a=0;
+			b=0;
+			angle=147.84547;
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="vehicle player != player ";
+			expActiv="if (typeOf (vehicle player) in masterClassArray) then {if ((vehicle player emptyPositions ""driver"" == 0) && (player != driver vehicle player)) exitWith {};if (getPlayerUID player in masteradminsArray) then {hint ""Administrator player confirmed -- Good Hunting!""} else {player action [""getOut"",(vehicle player)];hint ""Only administrators are authorized to use this vehicle!""}}";
+			class Effects
+			{
+			};
+		};
+		class Item222
+		{
+			position[]={10942.336,218.50169,11403.311};
+			a=150;
+			b=150;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,10] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item223
+		{
+			position[]={12076.409,54,9146.1748};
+			a=400;
+			b=400;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,70] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item224
+		{
+			position[]={12840.516,5.9811592,9892.0293};
+			a=200;
+			b=500;
+			angle=15.4415;
+			rectangular=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,50] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+		class Item225
+		{
+			position[]={10381.438,129.36307,9784.3369};
+			a=400;
+			b=400;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="true";
+			expActiv="0=[thisTrigger,20] execVM ""zombie_scripts\cly_z_generator.sqf""";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=2396248;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=6450384;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=2831889;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};

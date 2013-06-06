@@ -1,0 +1,261 @@
+;CLY Crate - Centralized crate loadout script
+;
+;Ammo crate's init:
+; [this,1] exec "cly_crate.sqs"
+;The number element determines which loadout is used for that crate. In this case #crate1.
+;
+;Loadout syntax:
+; [weapon class,number of weapons,number of mags,mag class (index number or string - optional)] call _cratescript
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+_crate=_this select 0
+_number=0
+?count _this>1:_number=_this select 1
+
+;Callable loadout script: [classname of gun,number of guns,number of mags,magazine class (optional, default 0)]
+_cratescript={_gun=_this select 0;_gunamount=_this select 1;_magamount=_this select 2;_ammotype=if (count _this>3) then {_this select 3} else {0};_mag=_ammotype;if (typeName _mag!="STRING") then {_mag=getArray (configFile/"CfgWeapons"/_gun/"magazines") select _ammotype};_crate addWeaponCargo [_gun,_gunamount];_crate addMagazineCargo [_mag,_magamount]}
+
+?typeOf _crate!="WeaponHolder":clearWeaponCargo _crate;clearMagazineCargo _crate
+
+goto format ["crate%1",_number]
+hintSilent format ["CLY Crate: loadout #%1 not found!",_number]
+exit
+
+
+#crate0
+["MP5A5",0,1] call _cratescript
+["M1014",0,5] call _cratescript
+["M9",0,2] call _cratescript
+["Colt1911",0,3] call _cratescript
+["Makarov",0,8] call _cratescript
+["AK_107_GL_kobra",0,1] call _cratescript
+["huntingrifle",0,2] call _cratescript
+["Saiga12K",1,6] call _cratescript
+["bizon",1,1] call _cratescript
+exit
+
+
+#crate1
+["MP5A5",0,1] call _cratescript
+["M1014",0,1] call _cratescript
+["M9",0,1] call _cratescript
+["Makarov",1,6] call _cratescript
+["Colt1911",0,1] call _cratescript
+["AK_107_GL_kobra",1,2] call _cratescript
+["AK_107_GL_kobra",0,8,"FlareWhite_GP25"] call _cratescript
+["huntingrifle",1,4] call _cratescript
+["Saiga12K",0,1] call _cratescript
+["bizon",0,1] call _cratescript
+["M16A2",0,1] call _cratescript
+exit
+
+
+#crate2
+["MP5A5",0,1] call _cratescript
+["M1014",0,2] call _cratescript
+["M9",0,1] call _cratescript
+["Makarov",0,6] call _cratescript
+["Colt1911",0,1] call _cratescript
+["AK_107_GL_kobra",0,1] call _cratescript
+["huntingrifle",0,2] call _cratescript
+["Saiga12K",0,2] call _cratescript
+["bizon",0,1] call _cratescript
+["M16A2",1,3] call _cratescript
+exit
+
+
+#crate3
+["MP5A5",0,2] call _cratescript
+["M1014",0,6] call _cratescript
+["M9",0,2] call _cratescript
+["Makarov",0,9] call _cratescript
+["Colt1911",0,3] call _cratescript
+["AK_107_GL_kobra",0,2] call _cratescript
+["huntingrifle",0,4] call _cratescript
+["Saiga12K",0,6] call _cratescript
+["bizon",0,1] call _cratescript
+["M16A2",0,2] call _cratescript
+["M249",0,1] call _cratescript
+exit
+
+
+#crate4
+["MP5A5",0,1] call _cratescript
+["M1014",0,4] call _cratescript
+["M9",0,1] call _cratescript
+["Makarov",0,9] call _cratescript
+["Colt1911",0,2] call _cratescript
+["AK_107_GL_kobra",0,1] call _cratescript
+["huntingrifle",0,2] call _cratescript
+["Saiga12K",0,4] call _cratescript
+["M16A2",0,1] call _cratescript
+exit
+
+
+#crate5
+["M1014",30,500] call _cratescript
+["Makarov",30,500] call _cratescript
+["Saiga12K",30,500] call _cratescript
+["M16A2",30,500] call _cratescript
+["M4A1",30,500] call _cratescript
+["ItemMap",50,0] call _cratescript
+exit
+
+
+#crate6
+["Makarov",1,2] call _cratescript
+["AK_74",1,3] call _cratescript
+["huntingrifle",0,1] call _cratescript
+["Saiga12K",0,1] call _cratescript
+["AKS_74_U",0,2] call _cratescript
+["Bizon",0,1] call _cratescript
+["ItemMap",1,0] call _cratescript
+exit
+
+#crate7
+["AK_47_M",1,2] call _cratescript
+["huntingrifle",0,1] call _cratescript
+exit
+
+#crate8
+["Makarov",2,4] call _cratescript
+["huntingrifle",0,1] call _cratescript
+["AKS_74_U",1,4] call _cratescript
+["ItemMap",1,0] call _cratescript
+exit
+
+#crate9
+["Makarov",2,4] call _cratescript
+["AK_74",3,9] call _cratescript
+["huntingrifle",1,1] call _cratescript
+["Bizon",1,1] call _cratescript
+["ItemMap",1,0] call _cratescript
+exit
+
+#crate10
+["AK_47_M",0,0] call _cratescript
+["Makarov",2,4] call _cratescript
+["AK_74",0,0] call _cratescript
+["huntingrifle",1,1] call _cratescript
+["Saiga12K",0,0] call _cratescript
+["AKS_74_U",0,0] call _cratescript
+["Bizon",0,0] call _cratescript
+["ItemMap",1,0] call _cratescript
+exit
+
+#crate11
+["AK_47_M",1,4] call _cratescript
+["Makarov",2,6] call _cratescript
+["AK_74",0,0] call _cratescript
+["huntingrifle",1,2] call _cratescript
+["Saiga12K",0,0] call _cratescript
+["AKS_74_U",2,6] call _cratescript
+["Bizon",1,2] call _cratescript
+["ItemMap",2,0] call _cratescript
+exit
+
+
+#crate12
+["G36C",1,4] call _cratescript
+["M9",4,8] call _cratescript
+["M16A2",1,3] call _cratescript
+["M4A1",2,6] call _cratescript
+["M1014",2,8] call _cratescript
+["M249",1,1] call _cratescript
+["MP5A5",1,5] call _cratescript
+["ItemMap",2,0] call _cratescript
+exit
+
+
+#crate13
+["AK_47_M",1,4] call _cratescript
+["Makarov",2,6] call _cratescript
+["AK_74",0,0] call _cratescript
+["huntingrifle",1,2] call _cratescript
+["Saiga12K",0,0] call _cratescript
+["AKS_74_U",2,6] call _cratescript
+["Bizon",1,2] call _cratescript
+["ItemMap",2,0] call _cratescript
+exit
+
+
+#crate9999
+["M240",100,1200] call _cratescript
+["M249",100,1200] call _cratescript
+["M8_SAW",100,1200] call _cratescript
+["MG36",100,1200] call _cratescript
+["Mk_48",100,1200] call _cratescript
+["PK",100,1200] call _cratescript
+["Pecheneg",100,1200] call _cratescript
+["RPK_74",100,1200] call _cratescript
+["Colt1911",100,1200] call _cratescript
+["M9",100,1200] call _cratescript
+["M9SD",100,1200] call _cratescript
+["Makarov",100,1200] call _cratescript
+["MakarovSD",100,1200] call _cratescript
+["DMR",100,1200] call _cratescript
+["Huntingrifle",100,1200] call _cratescript
+["KSVK",100,1200] call _cratescript
+["M107",100,1200] call _cratescript
+["M24",100,1200] call _cratescript
+["M40A3",100,1200] call _cratescript
+["M4SPR",100,1200] call _cratescript
+["M8_sharpshooter",100,1200] call _cratescript
+["SVD",100,1200] call _cratescript
+["SVD_Camo",100,1200] call _cratescript
+["VSS_Vintorez",100,1200] call _cratescript
+["Binocular",100,0] call _cratescript
+["NVGoggles",100,0] call _cratescript
+["M1014",100,1200] call _cratescript
+["Saiga12K",100,1200] call _cratescript
+["AKS_74_U",100,1200] call _cratescript
+["AKS_74_UN_Kobra",100,1200] call _cratescript
+["AKS_74_Kobra",100,1200] call _cratescript
+["AKS_74_pso",100,1200] call _cratescript
+["AKS_Gold",100,1200] call _cratescript
+["AK_107_GL_kobra",100,1200] call _cratescript
+["AK_107_GL_pso",100,1200] call _cratescript
+["AK_107_Kobra",100,1200] call _cratescript
+["AK_107_pso",100,1200] call _cratescript
+["AK_47_M",100,1200] call _cratescript
+["AK_47_S",100,1200] call _cratescript
+["AK_74",100,1200] call _cratescript
+["AK_74_GL",100,1200] call _cratescript
+["Bizon",100,1200] call _cratescript
+["G36C",100,1200] call _cratescript
+["G36K",100,1200] call _cratescript
+["G36_C_SD_eotech",100,1200] call _cratescript
+["G36A",100,1200] call _cratescript
+["M16A2",100,1200] call _cratescript
+["M16A2GL",100,1200] call _cratescript
+["M16A4",100,1200] call _cratescript
+["M16A4_ACG",100,1200] call _cratescript
+["M16A4_ACG_GL",100,1200] call _cratescript
+["M16A4_GL",100,1200] call _cratescript
+["M4A1",100,1200] call _cratescript
+["M4A1_AIM_SD_Camo",100,1200] call _cratescript
+["M4A1_AIM",100,1200] call _cratescript
+["M4A1_AIM_Camo",100,1200] call _cratescript
+["M4A1_HWS_GL",100,1200] call _cratescript
+["M4A1_HWS_GL_SD_Camo",100,1200] call _cratescript
+["M4A1_HWS_GL_Camo",100,1200] call _cratescript
+["M4A1_RCO_GL",100,1200] call _cratescript
+["M8_carbine",100,1200] call _cratescript
+["M8_carbineGL",100,1200] call _cratescript
+["M8_compact",100,1200] call _cratescript
+["MP5A5",100,1200] call _cratescript
+["MP5SD",100,1200] call _cratescript
+["VSS_vintorez",100,1200] call _cratescript
+["Bizon_Silenced",100,1200] call _cratescript
+["Igla",100,1200] call _cratescript
+["Javelin",100,1200] call _cratescript
+["M136",100,1200] call _cratescript
+["MetisLauncher",100,1200] call _cratescript
+["RPG18",100,1200] call _cratescript
+["RPG7V",100,1200] call _cratescript
+["SMAW",100,1200] call _cratescript
+["Stinger",100,1200] call _cratescript
+["Strela",100,1200] call _cratescript
+["ItemGPS",100,0] call _cratescript
+["ItemMap",100,0] call _cratescript
+exit

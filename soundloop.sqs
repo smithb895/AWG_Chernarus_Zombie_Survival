@@ -1,0 +1,14 @@
+_object=_this select 0
+_sound=_this select 1
+_duration=_this select 2
+
+_secondarysoundsource="HeliHEmpty" createVehicleLocal [0,0,0]
+_secondarysoundsource setPosATL getPosATL _object
+_soundsource=_object
+
+#loop
+_soundsource say _sound
+~_duration
+?_soundsource==_object:_soundsource=_secondarysoundsource;goto "loop"
+?_soundsource==_secondarysoundsource:_soundsource=_object
+goto "loop"

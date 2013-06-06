@@ -1,0 +1,88 @@
+_talker=_this select 1
+_arg=_this select 3
+
+?!_arg:player setVehicleInit "[satphone,this,true,true] exec 'radiocall.sqs';satphone removeAction 0";processInitCommands;exit
+?!isServer:exit
+
+?obj2done:exit
+?!obj2done:obj2done=true;publicVariable "obj2done"
+
+
+
+;Conversation
+_talker commandRadio "radio1"
+CLY_z_radiopv=[_talker,"radio1"];publicVariable "CLY_z_radiopv"
+~4
+
+unknownspeaker globalRadio "radio2"
+CLY_z_radiopv=[unknownspeaker,"radio2"];publicVariable "CLY_z_radiopv"
+~10
+
+nikita globalRadio "radio3"
+CLY_z_radiopv=[nikita,"radio3"];publicVariable "CLY_z_radiopv"
+~8
+
+@{_x distance satphone<3} count CLY_players>0
+_talkers=[]
+{if (_x distance satphone<3) then {_talkers=_talkers+[_x]}} forEach CLY_players
+_talker=_talkers select floor random count _talkers
+
+_radio="radio4"
+?CLY_hordetrigger!="horde1":_radio="radio4a"
+_talker commandRadio _radio
+CLY_z_radiopv=[_talker,_radio];publicVariable "CLY_z_radiopv"
+~6
+
+nikita globalRadio "radio5"
+CLY_z_radiopv=[nikita,"radio5"];publicVariable "CLY_z_radiopv"
+~8
+
+nikita globalRadio "radio6"
+CLY_z_radiopv=[nikita,"radio6"];publicVariable "CLY_z_radiopv"
+~7
+
+nikita globalRadio "radio7"
+CLY_z_radiopv=[nikita,"radio7"];publicVariable "CLY_z_radiopv"
+~6
+
+nikita globalRadio "radio8"
+CLY_z_radiopv=[nikita,"radio8"];publicVariable "CLY_z_radiopv"
+~6
+
+nikita globalRadio "radio9"
+CLY_z_radiopv=[nikita,"radio9"];publicVariable "CLY_z_radiopv"
+~6.5
+obj3activated=true;publicVariable "obj3activated"
+
+@{_x distance satphone<3} count CLY_players>0
+_talkers=[]
+{if (_x distance satphone<3) then {_talkers=_talkers+[_x]}} forEach CLY_players
+_talker=_talkers select floor random count _talkers
+
+_radio="radio10"
+?CLY_hordetrigger!="horde1":_radio="radio10a"
+_talker commandRadio _radio
+CLY_z_radiopv=[_talker,_radio];publicVariable "CLY_z_radiopv"
+~6
+
+nikita globalRadio "radio11"
+CLY_z_radiopv=[nikita,"radio11"];publicVariable "CLY_z_radiopv"
+~8
+"ammomarker2" setMarkerType "hd_pickup"
+
+@{_x distance satphone<3} count CLY_players>0
+_talkers=[]
+{if (_x distance satphone<3) then {_talkers=_talkers+[_x]}} forEach CLY_players
+_talker=_talkers select floor random count _talkers
+
+_talker commandRadio "radio12"
+CLY_z_radiopv=[_talker,"radio12"];publicVariable "CLY_z_radiopv"
+~3
+
+nikita globalRadio "radio13"
+CLY_z_radiopv=[nikita,"radio13"];publicVariable "CLY_z_radiopv"
+
+
+#skip
+
+exit

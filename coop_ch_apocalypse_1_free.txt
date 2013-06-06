@@ -1,0 +1,110 @@
+Chernarus Apocalypse, part one
+
+Story:
+Most of Chernarus has been overrun by zombies. Shortly after the outbreak began, the world was alerted with an emergency transmission and a quarantine was attempted by the CDF, Russia, NATO and hired professionals. The quarantine failed after 22 hours and all surviving units retreated to protect the capital region except for the Russians who have a long border with Chernarus to the north.
+
+You are one of the few survivors left in South Zagoria, the ground zero of the outbreak, and have been waiting for a passing ship or other form of help on the eastern shore in vain. Just a moment ago, you picked up a plea for help over the radio requesting assistance at the Olsha hill radio tower. You must go northwest and investigate.
+
+Description:
+This is a six-player zombie coop mission with four extra slots. You have to complete your objectives and survive against practically endless undead roaming all over the country. The zombies are resistant to bullets, and only a headshot is a sure kill. Your ammunition is worth its weight in gold, hence good aim and engagement discipline go a long way.
+
+For an SP prologue, check out Dawn of the Apocalypse:
+http://www.armaholic.com/page.php?id=12135
+
+Features:
+- Addon-free but convincing zombies
+- Several zombie behavior types
+- Player characters have unique equipment and diaries
+- Custom healing script with shareable bandages
+- Zombies may drop bandages
+- Pistols are accurate
+- Selectable friendly fire damage rate
+- JIP players start close to the group
+- Character gear, bandages and damage are saved in case a player disconnects
+- Spectator mode after death
+- You can continue the game after dying by picking a new unit slot
+- Pacifist or partial stealth run is very hard but possible
+
+Credits:
+Mission and scripts: Celery
+Apocalypse series concept: Zipper5 and Celery
+Voice acting: Rejenorst (www.rejenorst.com)
+Music: Thief: Deadly Shadows soundtrack composed by Eric Brosius
+Noises and screams: Thief: The Dark Project and freesound.org
+Fog script: Rockhount (original by Yac)
+
+Requirements:
+ARMA 2
+
+Mod compatibility:
+The mission has been designed to run without mods but should work fine with most mods. ACE is accommodated by removing the stamina feature.
+
+Installation:
+Put the pbo file into your ArmA 2\MPMissions folder.
+
+Changelog:
+v1.3 Free
+- Fixed erroneous character description
+- Fixed script error in init.sqf
+- Removed magazine dropping due to network issues
+
+v1.3
+- Fixed wrong crate loadouts
+- Fixed accuracy script
+- Added hint for the doctor and reporter
+
+v1.2 Free
+- Removed or changed all OA-dependent units, objects, weapons, features and scripts
+
+v1.2
+- Updated script base
+- Added more zombie models - server needs to run at least 1.59 beta
+- Added spoken lines
+- Added possibility to ignore objectives 1 and 3
+- Added new objective for clarity
+- Added new weapon and more magazines to geocache
+- Fixed radio conversation triggering twice
+- Fixed JIP issues
+- Fixed spectating issues
+- Removed ability to take a bandage from a live zombie
+- Removed unused sound file
+- Removed some exploitable positions
+- Compressed sound files
+- Made tower horde a little smaller
+- Changed weapon holder to ammo crate in tower to prevent it from disappearing
+- Tweaked crate loadouts
+- Changed M60 to PKM
+- Moved some units
+- Made zombies more resistant to leg damage
+- Take bandage action now stays indefinitely on players' bodies
+- You are notified when you receive a bandage or a friend heals you
+- Zombies may now drop ammunition (separate from their bodies)
+
+v1.1a
+- Fixed players being removed from zombie victim list when player joins in progress
+- Fixed player unintendedly going straight to spectating mode when joining in progress
+- Switched heal action priorities
+
+v1.1
+- Added 4 extra player slots
+- Added new zombie type
+- Added new zombie classes
+- Added rare instances of zombies carrying bandages (action instead of gear pops up)
+- Added damage feedback to spectator mode
+- Improved network performance by decreasing setVehicleInit commands
+- Improved zombie generator script
+- Improved CLY Heal script
+- Improved JIP friendliness
+- Improved trigger conditions
+- Improved task clarity
+- Improved Krasnostav store
+- Improved attack groans by making them instantaneous
+- Fixed spectating bugs
+- Fixed zombie behavior bug when switching to target in vehicle
+- Fixed random instances of non-reporters getting GPS at start
+- Fixed zombies firing shots before their weapons are removed
+- Fixed nil spawn handle
+- Fixed typos
+- Made last battle bigger
+- Disabled ACE stamina
+- Tweaked various things

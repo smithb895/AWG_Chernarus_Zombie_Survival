@@ -1,0 +1,18 @@
+[_this,1] exec "cly_crate.sqs"
+
+?!isServer:exit
+?!isNil "geocaches":geocaches=geocaches+[_this];exit
+
+geocaches=[_this]
+
+@count geocaches==15
+
+geocache=geocaches select floor random count geocaches
+geocaches=geocaches-[geocache]
+{deleteVehicle _x} forEach geocaches
+
+geocachemarker=createMarker ["geocachemarker",getPos geocache]
+geocachemarker setMarkerType "hd_pickup"
+geocachemarker setMarkerText "Geocache"
+geocachemarker setMarkerAlpha 1
+exit
